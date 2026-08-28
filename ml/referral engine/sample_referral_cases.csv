@@ -1,0 +1,601 @@
+case_id,patient_flow,doctor_reviewed,referral_required,criticality,suspected_condition,village_id,arrival_datetime,is_synthetic
+CASE0001,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL107,2026-08-26T16:00:00,True
+CASE0002,NORMAL,True,True,YELLOW,Respiratory distress,VIL158,2026-08-26T07:00:00,True
+CASE0003,NORMAL,True,True,RED,Obstetric concern,VIL062,2026-08-26T13:00:00,True
+CASE0004,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL074,2026-08-26T19:00:00,True
+CASE0005,NORMAL,True,True,GREEN,Severe skin condition,VIL129,2026-08-26T12:00:00,True
+CASE0006,NORMAL,True,True,YELLOW,Road traffic injury,VIL166,2026-08-26T23:00:00,True
+CASE0007,NORMAL,True,True,GREEN,Fracture,VIL114,2026-08-26T11:00:00,True
+CASE0008,NORMAL,True,True,RED,Severe skin condition,VIL092,2026-08-26T11:00:00,True
+CASE0009,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL144,2026-08-26T14:00:00,True
+CASE0010,NORMAL,True,True,RED,Suspected heart attack,VIL088,2026-08-26T07:00:00,True
+CASE0011,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL175,2026-08-26T16:00:00,True
+CASE0012,NORMAL,True,True,GREEN,Fracture,VIL138,2026-08-26T22:00:00,True
+CASE0013,NORMAL,True,True,GREEN,Joint injury requiring specialist care,VIL018,2026-08-26T14:00:00,True
+CASE0014,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL029,2026-08-26T17:00:00,True
+CASE0015,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL071,2026-08-26T13:00:00,True
+CASE0016,NORMAL,True,True,GREEN,Obstetric concern,VIL121,2026-08-27T00:00:00,True
+CASE0017,NORMAL,True,True,GREEN,Asthma exacerbation,VIL078,2026-08-26T15:00:00,True
+CASE0018,NORMAL,True,True,YELLOW,Renal complication,VIL004,2026-08-26T15:00:00,True
+CASE0019,NORMAL,True,True,RED,Severe chest pain with cardiac suspicion,VIL139,2026-08-26T06:00:00,True
+CASE0020,NORMAL,True,True,GREEN,Major trauma,VIL007,2026-08-26T09:00:00,True
+CASE0021,NORMAL,True,True,GREEN,General medical referral,VIL086,2026-08-26T22:00:00,True
+CASE0022,NORMAL,True,True,GREEN,General medical referral,VIL164,2026-08-26T20:00:00,True
+CASE0023,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL018,2026-08-26T23:00:00,True
+CASE0024,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL151,2026-08-26T19:00:00,True
+CASE0025,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL076,2026-08-26T15:00:00,True
+CASE0026,NORMAL,True,True,GREEN,Respiratory distress,VIL040,2026-08-26T21:00:00,True
+CASE0027,NORMAL,True,True,RED,Recurrent seizure,VIL087,2026-08-26T06:00:00,True
+CASE0028,NORMAL,True,True,YELLOW,Recurrent seizure,VIL078,2026-08-26T10:00:00,True
+CASE0029,NORMAL,True,True,GREEN,Major trauma,VIL169,2026-08-26T10:00:00,True
+CASE0030,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL137,2026-08-26T12:00:00,True
+CASE0031,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL117,2026-08-26T19:00:00,True
+CASE0032,NORMAL,True,True,RED,Severe chest pain with cardiac suspicion,VIL131,2026-08-26T15:00:00,True
+CASE0033,NORMAL,True,True,GREEN,Fracture,VIL064,2026-08-26T15:00:00,True
+CASE0034,NORMAL,True,True,YELLOW,Road traffic injury,VIL130,2026-08-26T08:00:00,True
+CASE0035,NORMAL,True,True,GREEN,Kidney failure,VIL055,2026-08-26T22:00:00,True
+CASE0036,NORMAL,True,True,GREEN,Child illness requiring referral,VIL172,2026-08-26T21:00:00,True
+CASE0037,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL162,2026-08-26T18:00:00,True
+CASE0038,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL149,2026-08-26T08:00:00,True
+CASE0039,NORMAL,True,True,RED,Routine primary-care referral,VIL098,2026-08-26T11:00:00,True
+CASE0040,NORMAL,True,True,GREEN,Kidney failure,VIL112,2026-08-26T19:00:00,True
+CASE0041,NORMAL,True,True,YELLOW,Respiratory distress,VIL044,2026-08-26T21:00:00,True
+CASE0042,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL054,2026-08-26T23:00:00,True
+CASE0043,NORMAL,True,True,GREEN,Obstetric concern,VIL067,2026-08-26T13:00:00,True
+CASE0044,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL079,2026-08-26T08:00:00,True
+CASE0045,NORMAL,True,True,GREEN,Major bone injury,VIL024,2026-08-26T06:00:00,True
+CASE0046,NORMAL,True,True,RED,Suspected stroke,VIL144,2026-08-26T07:00:00,True
+CASE0047,NORMAL,True,True,YELLOW,Road traffic injury,VIL067,2026-08-26T04:00:00,True
+CASE0048,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL007,2026-08-27T00:00:00,True
+CASE0049,NORMAL,True,True,YELLOW,Obstetric concern,VIL152,2026-08-26T10:00:00,True
+CASE0050,NORMAL,True,True,GREEN,Fracture,VIL130,2026-08-26T14:00:00,True
+CASE0051,NORMAL,True,True,YELLOW,Pregnancy complication,VIL060,2026-08-26T18:00:00,True
+CASE0052,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL058,2026-08-26T18:00:00,True
+CASE0053,NORMAL,True,True,GREEN,Acute abdomen requiring surgical review,VIL078,2026-08-26T18:00:00,True
+CASE0054,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL079,2026-08-26T09:00:00,True
+CASE0055,NORMAL,True,True,GREEN,Pregnancy complication,VIL020,2026-08-27T00:00:00,True
+CASE0056,NORMAL,True,True,YELLOW,Pregnancy complication,VIL043,2026-08-26T11:00:00,True
+CASE0057,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL130,2026-08-26T20:00:00,True
+CASE0058,NORMAL,True,True,GREEN,Suspected appendicitis,VIL045,2026-08-26T10:00:00,True
+CASE0059,NORMAL,True,True,GREEN,General medical referral,VIL096,2026-08-27T00:00:00,True
+CASE0060,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL178,2026-08-26T09:00:00,True
+CASE0061,NORMAL,True,True,RED,Respiratory distress,VIL154,2026-08-26T14:00:00,True
+CASE0062,NORMAL,True,True,YELLOW,Renal complication,VIL065,2026-08-26T20:00:00,True
+CASE0063,NORMAL,True,True,YELLOW,Major trauma,VIL180,2026-08-26T06:00:00,True
+CASE0064,NORMAL,True,True,YELLOW,Suspected heart attack,VIL086,2026-08-26T21:00:00,True
+CASE0065,NORMAL,True,True,YELLOW,Severe skin condition,VIL156,2026-08-26T18:00:00,True
+CASE0066,NORMAL,True,True,YELLOW,Fracture,VIL017,2026-08-26T09:00:00,True
+CASE0067,NORMAL,True,True,GREEN,Asthma exacerbation,VIL013,2026-08-26T18:00:00,True
+CASE0068,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL169,2026-08-26T14:00:00,True
+CASE0069,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL071,2026-08-26T04:00:00,True
+CASE0070,NORMAL,True,True,GREEN,Respiratory distress,VIL056,2026-08-27T00:00:00,True
+CASE0071,NORMAL,True,True,RED,Routine primary-care referral,VIL180,2026-08-26T17:00:00,True
+CASE0072,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL098,2026-08-26T12:00:00,True
+CASE0073,NORMAL,True,True,GREEN,Kidney failure,VIL166,2026-08-26T14:00:00,True
+CASE0074,NORMAL,True,True,YELLOW,Respiratory distress,VIL031,2026-08-26T05:00:00,True
+CASE0075,NORMAL,True,True,RED,Heart rhythm problem,VIL036,2026-08-26T20:00:00,True
+CASE0076,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL116,2026-08-26T15:00:00,True
+CASE0077,NORMAL,True,True,YELLOW,Recurrent seizure,VIL167,2026-08-26T11:00:00,True
+CASE0078,NORMAL,True,True,RED,Major bone injury,VIL060,2026-08-26T12:00:00,True
+CASE0079,NORMAL,True,True,GREEN,Recurrent seizure,VIL045,2026-08-26T13:00:00,True
+CASE0080,NORMAL,True,True,RED,Road traffic injury,VIL111,2026-08-26T21:00:00,True
+CASE0081,NORMAL,True,True,GREEN,Routine primary-care referral,VIL008,2026-08-26T21:00:00,True
+CASE0082,NORMAL,True,True,RED,Asthma exacerbation,VIL096,2026-08-26T04:00:00,True
+CASE0083,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL082,2026-08-26T17:00:00,True
+CASE0084,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL021,2026-08-26T06:00:00,True
+CASE0085,NORMAL,True,True,GREEN,Road traffic injury,VIL009,2026-08-26T14:00:00,True
+CASE0086,NORMAL,True,True,RED,Obstetric concern,VIL052,2026-08-26T20:00:00,True
+CASE0087,NORMAL,True,True,YELLOW,Recurrent seizure,VIL141,2026-08-26T12:00:00,True
+CASE0088,NORMAL,True,True,YELLOW,Obstetric concern,VIL118,2026-08-26T22:00:00,True
+CASE0089,NORMAL,True,True,YELLOW,Obstetric concern,VIL037,2026-08-26T11:00:00,True
+CASE0090,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL176,2026-08-26T15:00:00,True
+CASE0091,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL050,2026-08-26T13:00:00,True
+CASE0092,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL132,2026-08-26T20:00:00,True
+CASE0093,NORMAL,True,True,RED,Road traffic injury,VIL152,2026-08-26T13:00:00,True
+CASE0094,NORMAL,True,True,RED,Severe breathing difficulty,VIL150,2026-08-26T09:00:00,True
+CASE0095,NORMAL,True,True,YELLOW,General medical referral,VIL040,2026-08-26T08:00:00,True
+CASE0096,NORMAL,True,True,GREEN,Asthma exacerbation,VIL085,2026-08-27T00:00:00,True
+CASE0097,NORMAL,True,True,RED,Child illness requiring referral,VIL073,2026-08-26T23:00:00,True
+CASE0098,NORMAL,True,True,RED,Paediatric emergency concern,VIL098,2026-08-26T08:00:00,True
+CASE0099,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL177,2026-08-26T20:00:00,True
+CASE0100,NORMAL,True,True,RED,Heart rhythm problem,VIL111,2026-08-26T19:00:00,True
+CASE0101,NORMAL,True,True,GREEN,Road traffic injury,VIL137,2026-08-26T17:00:00,True
+CASE0102,NORMAL,True,True,YELLOW,Kidney failure,VIL136,2026-08-26T20:00:00,True
+CASE0103,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL096,2026-08-26T08:00:00,True
+CASE0104,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL163,2026-08-26T18:00:00,True
+CASE0105,NORMAL,True,True,YELLOW,Renal complication,VIL078,2026-08-26T20:00:00,True
+CASE0106,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL020,2026-08-26T16:00:00,True
+CASE0107,NORMAL,True,True,GREEN,Kidney failure,VIL059,2026-08-26T13:00:00,True
+CASE0108,NORMAL,True,True,GREEN,General medical referral,VIL089,2026-08-26T14:00:00,True
+CASE0109,NORMAL,True,True,YELLOW,Renal complication,VIL101,2026-08-26T04:00:00,True
+CASE0110,NORMAL,True,True,RED,Child illness requiring referral,VIL035,2026-08-26T08:00:00,True
+CASE0111,NORMAL,True,True,YELLOW,Renal complication,VIL094,2026-08-26T23:00:00,True
+CASE0112,NORMAL,True,True,RED,Kidney failure,VIL012,2026-08-26T12:00:00,True
+CASE0113,NORMAL,True,True,GREEN,Child illness requiring referral,VIL135,2026-08-26T16:00:00,True
+CASE0114,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL075,2026-08-26T11:00:00,True
+CASE0115,NORMAL,True,True,GREEN,Acute neurological deficit,VIL096,2026-08-26T10:00:00,True
+CASE0116,NORMAL,True,True,GREEN,Acute neurological deficit,VIL131,2026-08-26T19:00:00,True
+CASE0117,NORMAL,True,True,GREEN,Pregnancy complication,VIL049,2026-08-26T07:00:00,True
+CASE0118,NORMAL,True,True,GREEN,Renal complication,VIL048,2026-08-26T23:00:00,True
+CASE0119,NORMAL,True,True,YELLOW,Pregnancy complication,VIL151,2026-08-26T16:00:00,True
+CASE0120,NORMAL,True,True,YELLOW,Major trauma,VIL039,2026-08-27T00:00:00,True
+CASE0121,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL012,2026-08-26T19:00:00,True
+CASE0122,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL087,2026-08-26T05:00:00,True
+CASE0123,NORMAL,True,True,GREEN,General medical referral,VIL103,2026-08-26T09:00:00,True
+CASE0124,NORMAL,True,True,YELLOW,Respiratory distress,VIL162,2026-08-26T19:00:00,True
+CASE0125,NORMAL,True,True,RED,Pregnancy complication,VIL019,2026-08-26T23:00:00,True
+CASE0126,NORMAL,True,True,RED,General medical referral,VIL044,2026-08-26T11:00:00,True
+CASE0127,NORMAL,True,True,GREEN,Suspected heart attack,VIL007,2026-08-26T09:00:00,True
+CASE0128,NORMAL,True,True,YELLOW,Pregnancy complication,VIL159,2026-08-26T04:00:00,True
+CASE0129,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL043,2026-08-26T16:00:00,True
+CASE0130,NORMAL,True,True,GREEN,Renal complication,VIL104,2026-08-26T17:00:00,True
+CASE0131,NORMAL,True,True,YELLOW,Suspected heart attack,VIL136,2026-08-26T14:00:00,True
+CASE0132,NORMAL,True,True,GREEN,Recurrent seizure,VIL051,2026-08-26T13:00:00,True
+CASE0133,NORMAL,True,True,RED,Severe renal disease,VIL078,2026-08-26T18:00:00,True
+CASE0134,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL151,2026-08-26T17:00:00,True
+CASE0135,NORMAL,True,True,GREEN,Routine primary-care referral,VIL062,2026-08-26T23:00:00,True
+CASE0136,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL173,2026-08-26T11:00:00,True
+CASE0137,NORMAL,True,True,RED,Major bone injury,VIL114,2026-08-26T11:00:00,True
+CASE0138,NORMAL,True,True,RED,Fracture,VIL172,2026-08-26T06:00:00,True
+CASE0139,NORMAL,True,True,GREEN,Road traffic injury,VIL151,2026-08-26T13:00:00,True
+CASE0140,NORMAL,True,True,YELLOW,Kidney failure,VIL141,2026-08-26T05:00:00,True
+CASE0141,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL043,2026-08-26T14:00:00,True
+CASE0142,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL087,2026-08-26T16:00:00,True
+CASE0143,NORMAL,True,True,YELLOW,Road traffic injury,VIL107,2026-08-26T04:00:00,True
+CASE0144,NORMAL,True,True,GREEN,Routine primary-care referral,VIL022,2026-08-26T13:00:00,True
+CASE0145,NORMAL,True,True,GREEN,Major bone injury,VIL123,2026-08-26T15:00:00,True
+CASE0146,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL149,2026-08-26T08:00:00,True
+CASE0147,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL153,2026-08-26T19:00:00,True
+CASE0148,NORMAL,True,True,GREEN,Asthma exacerbation,VIL082,2026-08-26T04:00:00,True
+CASE0149,NORMAL,True,True,YELLOW,Obstetric concern,VIL031,2026-08-27T00:00:00,True
+CASE0150,NORMAL,True,True,GREEN,Kidney failure,VIL020,2026-08-26T11:00:00,True
+CASE0151,NORMAL,True,True,YELLOW,Fracture,VIL174,2026-08-26T17:00:00,True
+CASE0152,NORMAL,True,True,GREEN,Major bone injury,VIL179,2026-08-27T00:00:00,True
+CASE0153,NORMAL,True,True,RED,Road traffic injury,VIL136,2026-08-26T17:00:00,True
+CASE0154,NORMAL,True,True,YELLOW,Renal complication,VIL006,2026-08-26T23:00:00,True
+CASE0155,NORMAL,True,True,YELLOW,Obstetric concern,VIL008,2026-08-26T21:00:00,True
+CASE0156,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL083,2026-08-26T17:00:00,True
+CASE0157,NORMAL,True,True,GREEN,Heart rhythm problem,VIL120,2026-08-26T21:00:00,True
+CASE0158,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL059,2026-08-26T11:00:00,True
+CASE0159,NORMAL,True,True,RED,Renal complication,VIL129,2026-08-26T11:00:00,True
+CASE0160,NORMAL,True,True,RED,Kidney failure,VIL070,2026-08-26T19:00:00,True
+CASE0161,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL059,2026-08-26T13:00:00,True
+CASE0162,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL115,2026-08-26T11:00:00,True
+CASE0163,NORMAL,True,True,GREEN,Renal complication,VIL039,2026-08-26T19:00:00,True
+CASE0164,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL110,2026-08-26T07:00:00,True
+CASE0165,NORMAL,True,True,GREEN,Recurrent seizure,VIL143,2026-08-26T12:00:00,True
+CASE0166,NORMAL,True,True,GREEN,General medical referral,VIL135,2026-08-26T13:00:00,True
+CASE0167,NORMAL,True,True,RED,Severe renal disease,VIL173,2026-08-26T18:00:00,True
+CASE0168,NORMAL,True,True,GREEN,Suspected stroke,VIL148,2026-08-26T07:00:00,True
+CASE0169,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL090,2026-08-26T14:00:00,True
+CASE0170,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL100,2026-08-26T05:00:00,True
+CASE0171,NORMAL,True,True,YELLOW,Obstetric concern,VIL035,2026-08-26T10:00:00,True
+CASE0172,NORMAL,True,True,YELLOW,Major bone injury,VIL171,2026-08-26T17:00:00,True
+CASE0173,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL168,2026-08-26T23:00:00,True
+CASE0174,NORMAL,True,True,RED,Obstetric concern,VIL147,2026-08-26T23:00:00,True
+CASE0175,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL129,2026-08-26T11:00:00,True
+CASE0176,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL176,2026-08-26T08:00:00,True
+CASE0177,NORMAL,True,True,RED,Major trauma,VIL173,2026-08-26T12:00:00,True
+CASE0178,NORMAL,True,True,GREEN,Recurrent seizure,VIL121,2026-08-26T13:00:00,True
+CASE0179,NORMAL,True,True,GREEN,Heart rhythm problem,VIL005,2026-08-26T17:00:00,True
+CASE0180,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL120,2026-08-26T09:00:00,True
+CASE0181,NORMAL,True,True,GREEN,Fracture,VIL058,2026-08-27T00:00:00,True
+CASE0182,NORMAL,True,True,YELLOW,Fracture,VIL132,2026-08-26T06:00:00,True
+CASE0183,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL015,2026-08-26T14:00:00,True
+CASE0184,NORMAL,True,True,GREEN,Major bone injury,VIL081,2026-08-26T06:00:00,True
+CASE0185,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL176,2026-08-26T15:00:00,True
+CASE0186,NORMAL,True,True,YELLOW,Fracture,VIL136,2026-08-26T12:00:00,True
+CASE0187,NORMAL,True,True,YELLOW,General medical referral,VIL137,2026-08-26T09:00:00,True
+CASE0188,NORMAL,True,True,YELLOW,Kidney failure,VIL133,2026-08-26T09:00:00,True
+CASE0189,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL177,2026-08-26T16:00:00,True
+CASE0190,NORMAL,True,True,YELLOW,Suspected heart attack,VIL164,2026-08-26T14:00:00,True
+CASE0191,NORMAL,True,True,YELLOW,Obstetric concern,VIL129,2026-08-26T14:00:00,True
+CASE0192,NORMAL,True,True,GREEN,Acute neurological deficit,VIL079,2026-08-26T16:00:00,True
+CASE0193,NORMAL,True,True,GREEN,Acute neurological deficit,VIL012,2026-08-26T16:00:00,True
+CASE0194,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL113,2026-08-26T13:00:00,True
+CASE0195,NORMAL,True,True,YELLOW,Pregnancy complication,VIL145,2026-08-26T10:00:00,True
+CASE0196,NORMAL,True,True,RED,Asthma exacerbation,VIL169,2026-08-26T14:00:00,True
+CASE0197,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL079,2026-08-26T09:00:00,True
+CASE0198,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL057,2026-08-26T11:00:00,True
+CASE0199,NORMAL,True,True,RED,Suspected appendicitis,VIL047,2026-08-26T22:00:00,True
+CASE0200,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL116,2026-08-26T06:00:00,True
+CASE0201,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL009,2026-08-26T17:00:00,True
+CASE0202,NORMAL,True,True,RED,Renal complication,VIL009,2026-08-26T14:00:00,True
+CASE0203,NORMAL,True,True,GREEN,Acute neurological deficit,VIL049,2026-08-26T14:00:00,True
+CASE0204,NORMAL,True,True,YELLOW,Respiratory distress,VIL135,2026-08-26T15:00:00,True
+CASE0205,NORMAL,True,True,RED,Recurrent seizure,VIL022,2026-08-26T21:00:00,True
+CASE0206,NORMAL,True,True,YELLOW,Obstetric concern,VIL105,2026-08-26T06:00:00,True
+CASE0207,NORMAL,True,True,YELLOW,Major bone injury,VIL048,2026-08-26T05:00:00,True
+CASE0208,NORMAL,True,True,YELLOW,Respiratory distress,VIL123,2026-08-26T18:00:00,True
+CASE0209,NORMAL,True,True,GREEN,Suspected stroke,VIL057,2026-08-26T23:00:00,True
+CASE0210,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL076,2026-08-26T18:00:00,True
+CASE0211,NORMAL,True,True,GREEN,Respiratory distress,VIL025,2026-08-26T14:00:00,True
+CASE0212,NORMAL,True,True,GREEN,Obstetric concern,VIL161,2026-08-26T15:00:00,True
+CASE0213,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL008,2026-08-26T06:00:00,True
+CASE0214,NORMAL,True,True,GREEN,General medical referral,VIL084,2026-08-26T16:00:00,True
+CASE0215,NORMAL,True,True,RED,Heart rhythm problem,VIL052,2026-08-26T04:00:00,True
+CASE0216,NORMAL,True,True,YELLOW,Major bone injury,VIL078,2026-08-26T14:00:00,True
+CASE0217,NORMAL,True,True,GREEN,General medical referral,VIL163,2026-08-26T10:00:00,True
+CASE0218,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL059,2026-08-26T16:00:00,True
+CASE0219,NORMAL,True,True,RED,Road traffic injury,VIL118,2026-08-26T18:00:00,True
+CASE0220,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL148,2026-08-26T21:00:00,True
+CASE0221,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL069,2026-08-26T22:00:00,True
+CASE0222,NORMAL,True,True,RED,Severe breathing difficulty,VIL056,2026-08-26T20:00:00,True
+CASE0223,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL092,2026-08-26T11:00:00,True
+CASE0224,NORMAL,True,True,GREEN,Respiratory distress,VIL173,2026-08-26T17:00:00,True
+CASE0225,NORMAL,True,True,YELLOW,General medical referral,VIL066,2026-08-26T11:00:00,True
+CASE0226,NORMAL,True,True,RED,Severe chest pain with cardiac suspicion,VIL095,2026-08-26T22:00:00,True
+CASE0227,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL022,2026-08-26T17:00:00,True
+CASE0228,NORMAL,True,True,RED,Respiratory distress,VIL101,2026-08-26T13:00:00,True
+CASE0229,NORMAL,True,True,YELLOW,Severe renal disease,VIL099,2026-08-26T07:00:00,True
+CASE0230,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL073,2026-08-26T16:00:00,True
+CASE0231,NORMAL,True,True,YELLOW,Major trauma,VIL131,2026-08-26T04:00:00,True
+CASE0232,NORMAL,True,True,YELLOW,Kidney failure,VIL115,2026-08-26T14:00:00,True
+CASE0233,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL135,2026-08-26T12:00:00,True
+CASE0234,NORMAL,True,True,GREEN,Asthma exacerbation,VIL122,2026-08-27T00:00:00,True
+CASE0235,NORMAL,True,True,YELLOW,Recurrent seizure,VIL052,2026-08-26T21:00:00,True
+CASE0236,NORMAL,True,True,GREEN,Severe renal disease,VIL042,2026-08-26T18:00:00,True
+CASE0237,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL132,2026-08-26T23:00:00,True
+CASE0238,NORMAL,True,True,RED,Asthma exacerbation,VIL032,2026-08-26T17:00:00,True
+CASE0239,NORMAL,True,True,GREEN,Child illness requiring referral,VIL174,2026-08-26T07:00:00,True
+CASE0240,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL004,2026-08-26T05:00:00,True
+CASE0241,NORMAL,True,True,RED,Severe renal disease,VIL106,2026-08-26T18:00:00,True
+CASE0242,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL039,2026-08-26T20:00:00,True
+CASE0243,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL044,2026-08-26T04:00:00,True
+CASE0244,NORMAL,True,True,GREEN,General medical referral,VIL006,2026-08-26T05:00:00,True
+CASE0245,NORMAL,True,True,GREEN,Routine primary-care referral,VIL096,2026-08-26T16:00:00,True
+CASE0246,NORMAL,True,True,GREEN,Fracture,VIL100,2026-08-26T06:00:00,True
+CASE0247,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL140,2026-08-26T11:00:00,True
+CASE0248,NORMAL,True,True,YELLOW,Respiratory distress,VIL057,2026-08-26T15:00:00,True
+CASE0249,NORMAL,True,True,GREEN,Major trauma,VIL057,2026-08-26T17:00:00,True
+CASE0250,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL085,2026-08-26T21:00:00,True
+CASE0251,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL057,2026-08-26T17:00:00,True
+CASE0252,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL137,2026-08-26T21:00:00,True
+CASE0253,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL018,2026-08-26T23:00:00,True
+CASE0254,NORMAL,True,True,YELLOW,Severe skin condition,VIL015,2026-08-26T06:00:00,True
+CASE0255,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL116,2026-08-26T18:00:00,True
+CASE0256,NORMAL,True,True,GREEN,Acute neurological deficit,VIL180,2026-08-26T08:00:00,True
+CASE0257,NORMAL,True,True,GREEN,Major trauma,VIL122,2026-08-26T10:00:00,True
+CASE0258,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL150,2026-08-26T15:00:00,True
+CASE0259,NORMAL,True,True,RED,Suspected appendicitis,VIL071,2026-08-26T18:00:00,True
+CASE0260,NORMAL,True,True,RED,Severe breathing difficulty,VIL152,2026-08-26T22:00:00,True
+CASE0261,NORMAL,True,True,GREEN,Heart rhythm problem,VIL068,2026-08-26T10:00:00,True
+CASE0262,NORMAL,True,True,GREEN,Recurrent seizure,VIL098,2026-08-26T15:00:00,True
+CASE0263,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL063,2026-08-26T13:00:00,True
+CASE0264,NORMAL,True,True,YELLOW,Major trauma,VIL110,2026-08-26T12:00:00,True
+CASE0265,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL020,2026-08-26T22:00:00,True
+CASE0266,NORMAL,True,True,GREEN,Asthma exacerbation,VIL095,2026-08-26T22:00:00,True
+CASE0267,NORMAL,True,True,GREEN,Road traffic injury,VIL175,2026-08-26T08:00:00,True
+CASE0268,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL040,2026-08-26T19:00:00,True
+CASE0269,NORMAL,True,True,GREEN,Child illness requiring referral,VIL059,2026-08-26T18:00:00,True
+CASE0270,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL145,2026-08-26T17:00:00,True
+CASE0271,NORMAL,True,True,YELLOW,Road traffic injury,VIL005,2026-08-26T16:00:00,True
+CASE0272,NORMAL,True,True,GREEN,Pregnancy complication,VIL125,2026-08-26T19:00:00,True
+CASE0273,NORMAL,True,True,RED,Suspected heart attack,VIL049,2026-08-26T05:00:00,True
+CASE0274,NORMAL,True,True,RED,Recurrent seizure,VIL130,2026-08-26T19:00:00,True
+CASE0275,NORMAL,True,True,GREEN,General medical referral,VIL159,2026-08-26T09:00:00,True
+CASE0276,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL111,2026-08-27T00:00:00,True
+CASE0277,NORMAL,True,True,GREEN,Fracture,VIL092,2026-08-26T04:00:00,True
+CASE0278,NORMAL,True,True,GREEN,Major bone injury,VIL031,2026-08-26T13:00:00,True
+CASE0279,NORMAL,True,True,GREEN,Major trauma,VIL138,2026-08-26T12:00:00,True
+CASE0280,NORMAL,True,True,YELLOW,Suspected stroke,VIL052,2026-08-26T16:00:00,True
+CASE0281,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL026,2026-08-26T04:00:00,True
+CASE0282,NORMAL,True,True,GREEN,Major bone injury,VIL033,2026-08-26T04:00:00,True
+CASE0283,NORMAL,True,True,RED,Joint injury requiring specialist care,VIL094,2026-08-26T14:00:00,True
+CASE0284,NORMAL,True,True,GREEN,Road traffic injury,VIL061,2026-08-26T09:00:00,True
+CASE0285,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL172,2026-08-26T11:00:00,True
+CASE0286,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL015,2026-08-26T13:00:00,True
+CASE0287,NORMAL,True,True,YELLOW,Pregnancy complication,VIL153,2026-08-26T15:00:00,True
+CASE0288,NORMAL,True,True,GREEN,Fracture,VIL031,2026-08-26T11:00:00,True
+CASE0289,NORMAL,True,True,RED,Severe skin condition,VIL173,2026-08-26T18:00:00,True
+CASE0290,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL052,2026-08-26T17:00:00,True
+CASE0291,NORMAL,True,True,YELLOW,Kidney failure,VIL164,2026-08-26T10:00:00,True
+CASE0292,NORMAL,True,True,GREEN,Severe renal disease,VIL116,2026-08-26T20:00:00,True
+CASE0293,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL151,2026-08-26T10:00:00,True
+CASE0294,NORMAL,True,True,RED,Asthma exacerbation,VIL140,2026-08-26T10:00:00,True
+CASE0295,NORMAL,True,True,RED,Road traffic injury,VIL147,2026-08-26T12:00:00,True
+CASE0296,NORMAL,True,True,GREEN,Severe skin condition,VIL160,2026-08-26T06:00:00,True
+CASE0297,NORMAL,True,True,GREEN,Child illness requiring referral,VIL022,2026-08-26T13:00:00,True
+CASE0298,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL150,2026-08-26T14:00:00,True
+CASE0299,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL157,2026-08-26T20:00:00,True
+CASE0300,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL175,2026-08-26T17:00:00,True
+CASE0301,NORMAL,True,True,YELLOW,Fracture,VIL043,2026-08-26T12:00:00,True
+CASE0302,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL112,2026-08-26T04:00:00,True
+CASE0303,NORMAL,True,True,RED,Major trauma,VIL077,2026-08-26T08:00:00,True
+CASE0304,NORMAL,True,True,RED,Acute neurological deficit,VIL121,2026-08-26T11:00:00,True
+CASE0305,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL073,2026-08-26T05:00:00,True
+CASE0306,NORMAL,True,True,RED,Suspected heart attack,VIL175,2026-08-26T20:00:00,True
+CASE0307,NORMAL,True,True,RED,Acute coronary syndrome,VIL050,2026-08-26T22:00:00,True
+CASE0308,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL036,2026-08-26T16:00:00,True
+CASE0309,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL075,2026-08-26T15:00:00,True
+CASE0310,NORMAL,True,True,RED,Severe chest pain with cardiac suspicion,VIL113,2026-08-26T21:00:00,True
+CASE0311,NORMAL,True,True,RED,Kidney failure,VIL056,2026-08-26T06:00:00,True
+CASE0312,NORMAL,True,True,YELLOW,Renal complication,VIL078,2026-08-26T19:00:00,True
+CASE0313,NORMAL,True,True,RED,Severe chest pain with cardiac suspicion,VIL039,2026-08-26T16:00:00,True
+CASE0314,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL026,2026-08-26T06:00:00,True
+CASE0315,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL116,2026-08-26T16:00:00,True
+CASE0316,NORMAL,True,True,GREEN,Major bone injury,VIL010,2026-08-26T18:00:00,True
+CASE0317,NORMAL,True,True,GREEN,Recurrent seizure,VIL056,2026-08-26T06:00:00,True
+CASE0318,NORMAL,True,True,GREEN,Joint injury requiring specialist care,VIL093,2026-08-26T21:00:00,True
+CASE0319,NORMAL,True,True,RED,Child illness requiring referral,VIL072,2026-08-26T08:00:00,True
+CASE0320,NORMAL,True,True,GREEN,General medical referral,VIL086,2026-08-26T04:00:00,True
+CASE0321,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL134,2026-08-26T18:00:00,True
+CASE0322,NORMAL,True,True,RED,Routine primary-care referral,VIL044,2026-08-26T05:00:00,True
+CASE0323,NORMAL,True,True,GREEN,Major trauma,VIL031,2026-08-26T09:00:00,True
+CASE0324,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL062,2026-08-26T15:00:00,True
+CASE0325,NORMAL,True,True,RED,Road traffic injury,VIL055,2026-08-26T05:00:00,True
+CASE0326,NORMAL,True,True,GREEN,Joint injury requiring specialist care,VIL134,2026-08-26T20:00:00,True
+CASE0327,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL063,2026-08-26T23:00:00,True
+CASE0328,NORMAL,True,True,YELLOW,Recurrent seizure,VIL108,2026-08-26T10:00:00,True
+CASE0329,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL054,2026-08-26T17:00:00,True
+CASE0330,NORMAL,True,True,YELLOW,Severe skin condition,VIL040,2026-08-26T06:00:00,True
+CASE0331,NORMAL,True,True,YELLOW,Pregnancy complication,VIL077,2026-08-26T19:00:00,True
+CASE0332,NORMAL,True,True,YELLOW,Road traffic injury,VIL035,2026-08-26T07:00:00,True
+CASE0333,NORMAL,True,True,RED,Asthma exacerbation,VIL144,2026-08-26T05:00:00,True
+CASE0334,NORMAL,True,True,GREEN,Road traffic injury,VIL103,2026-08-26T10:00:00,True
+CASE0335,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL009,2026-08-26T17:00:00,True
+CASE0336,NORMAL,True,True,RED,Respiratory distress,VIL104,2026-08-26T19:00:00,True
+CASE0337,NORMAL,True,True,GREEN,Suspected appendicitis,VIL177,2026-08-26T10:00:00,True
+CASE0338,NORMAL,True,True,RED,Routine primary-care referral,VIL076,2026-08-26T08:00:00,True
+CASE0339,NORMAL,True,True,YELLOW,Severe skin condition,VIL049,2026-08-26T23:00:00,True
+CASE0340,NORMAL,True,True,GREEN,Kidney failure,VIL046,2026-08-26T16:00:00,True
+CASE0341,NORMAL,True,True,RED,Road traffic injury,VIL174,2026-08-26T05:00:00,True
+CASE0342,NORMAL,True,True,RED,Obstetric concern,VIL146,2026-08-26T16:00:00,True
+CASE0343,NORMAL,True,True,YELLOW,Major trauma,VIL046,2026-08-26T13:00:00,True
+CASE0344,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL013,2026-08-26T15:00:00,True
+CASE0345,NORMAL,True,True,RED,Acute neurological deficit,VIL041,2026-08-26T10:00:00,True
+CASE0346,NORMAL,True,True,YELLOW,Severe skin condition,VIL170,2026-08-26T14:00:00,True
+CASE0347,NORMAL,True,True,GREEN,Road traffic injury,VIL065,2026-08-26T04:00:00,True
+CASE0348,NORMAL,True,True,GREEN,Severe renal disease,VIL157,2026-08-26T08:00:00,True
+CASE0349,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL056,2026-08-26T23:00:00,True
+CASE0350,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL130,2026-08-26T13:00:00,True
+CASE0351,NORMAL,True,True,GREEN,Recurrent seizure,VIL154,2026-08-26T15:00:00,True
+CASE0352,NORMAL,True,True,GREEN,Recurrent seizure,VIL134,2026-08-26T19:00:00,True
+CASE0353,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL065,2026-08-27T00:00:00,True
+CASE0354,NORMAL,True,True,GREEN,Acute abdomen requiring surgical review,VIL022,2026-08-26T23:00:00,True
+CASE0355,NORMAL,True,True,YELLOW,Suspected stroke,VIL021,2026-08-26T09:00:00,True
+CASE0356,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL169,2026-08-26T09:00:00,True
+CASE0357,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL084,2026-08-26T04:00:00,True
+CASE0358,NORMAL,True,True,GREEN,Severe skin condition,VIL173,2026-08-26T20:00:00,True
+CASE0359,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL091,2026-08-26T07:00:00,True
+CASE0360,NORMAL,True,True,YELLOW,Major trauma,VIL166,2026-08-26T14:00:00,True
+CASE0361,NORMAL,True,True,YELLOW,General medical referral,VIL099,2026-08-26T11:00:00,True
+CASE0362,NORMAL,True,True,YELLOW,General medical referral,VIL170,2026-08-26T19:00:00,True
+CASE0363,NORMAL,True,True,YELLOW,Renal complication,VIL018,2026-08-26T05:00:00,True
+CASE0364,NORMAL,True,True,GREEN,Road traffic injury,VIL097,2026-08-26T15:00:00,True
+CASE0365,NORMAL,True,True,GREEN,Kidney failure,VIL156,2026-08-26T04:00:00,True
+CASE0366,NORMAL,True,True,RED,Suspected heart attack,VIL076,2026-08-26T12:00:00,True
+CASE0367,NORMAL,True,True,GREEN,Pregnancy complication,VIL012,2026-08-27T00:00:00,True
+CASE0368,NORMAL,True,True,RED,Joint injury requiring specialist care,VIL150,2026-08-26T11:00:00,True
+CASE0369,NORMAL,True,True,RED,Major trauma,VIL158,2026-08-26T16:00:00,True
+CASE0370,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL009,2026-08-26T15:00:00,True
+CASE0371,NORMAL,True,True,YELLOW,Kidney failure,VIL056,2026-08-26T21:00:00,True
+CASE0372,NORMAL,True,True,YELLOW,Pregnancy complication,VIL171,2026-08-26T18:00:00,True
+CASE0373,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL142,2026-08-27T00:00:00,True
+CASE0374,NORMAL,True,True,YELLOW,Fracture,VIL102,2026-08-26T12:00:00,True
+CASE0375,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL050,2026-08-26T22:00:00,True
+CASE0376,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL058,2026-08-26T17:00:00,True
+CASE0377,NORMAL,True,True,GREEN,Major trauma,VIL077,2026-08-26T04:00:00,True
+CASE0378,NORMAL,True,True,GREEN,Acute abdomen requiring surgical review,VIL145,2026-08-26T21:00:00,True
+CASE0379,NORMAL,True,True,GREEN,Recurrent seizure,VIL116,2026-08-26T04:00:00,True
+CASE0380,NORMAL,True,True,GREEN,Acute neurological deficit,VIL050,2026-08-26T08:00:00,True
+CASE0381,NORMAL,True,True,GREEN,Respiratory distress,VIL080,2026-08-26T11:00:00,True
+CASE0382,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL102,2026-08-26T04:00:00,True
+CASE0383,NORMAL,True,True,GREEN,Major trauma,VIL105,2026-08-26T05:00:00,True
+CASE0384,NORMAL,True,True,YELLOW,Recurrent seizure,VIL032,2026-08-27T00:00:00,True
+CASE0385,NORMAL,True,True,RED,Suspected stroke,VIL112,2026-08-26T16:00:00,True
+CASE0386,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL116,2026-08-26T05:00:00,True
+CASE0387,NORMAL,True,True,YELLOW,Kidney failure,VIL075,2026-08-26T22:00:00,True
+CASE0388,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL081,2026-08-26T14:00:00,True
+CASE0389,NORMAL,True,True,YELLOW,Kidney failure,VIL141,2026-08-26T15:00:00,True
+CASE0390,NORMAL,True,True,YELLOW,Major bone injury,VIL114,2026-08-26T17:00:00,True
+CASE0391,NORMAL,True,True,GREEN,Suspected stroke,VIL053,2026-08-26T23:00:00,True
+CASE0392,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL145,2026-08-26T21:00:00,True
+CASE0393,NORMAL,True,True,RED,Severe breathing difficulty,VIL149,2026-08-26T05:00:00,True
+CASE0394,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL163,2026-08-26T13:00:00,True
+CASE0395,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL171,2026-08-26T21:00:00,True
+CASE0396,NORMAL,True,True,YELLOW,Severe renal disease,VIL069,2026-08-26T18:00:00,True
+CASE0397,NORMAL,True,True,RED,Pregnancy complication,VIL089,2026-08-26T22:00:00,True
+CASE0398,NORMAL,True,True,GREEN,Asthma exacerbation,VIL082,2026-08-26T06:00:00,True
+CASE0399,NORMAL,True,True,YELLOW,Major bone injury,VIL142,2026-08-26T05:00:00,True
+CASE0400,NORMAL,True,True,GREEN,Heart rhythm problem,VIL132,2026-08-26T16:00:00,True
+CASE0401,NORMAL,True,True,RED,Severe skin condition,VIL009,2026-08-26T18:00:00,True
+CASE0402,NORMAL,True,True,RED,Severe skin condition,VIL153,2026-08-26T17:00:00,True
+CASE0403,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL169,2026-08-26T17:00:00,True
+CASE0404,NORMAL,True,True,GREEN,Suspected heart attack,VIL001,2026-08-26T22:00:00,True
+CASE0405,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL065,2026-08-27T00:00:00,True
+CASE0406,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL010,2026-08-26T13:00:00,True
+CASE0407,NORMAL,True,True,RED,Fracture,VIL149,2026-08-26T08:00:00,True
+CASE0408,NORMAL,True,True,GREEN,Acute neurological deficit,VIL115,2026-08-26T20:00:00,True
+CASE0409,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL048,2026-08-26T09:00:00,True
+CASE0410,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL149,2026-08-26T07:00:00,True
+CASE0411,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL180,2026-08-26T08:00:00,True
+CASE0412,NORMAL,True,True,RED,Suspected appendicitis,VIL179,2026-08-26T15:00:00,True
+CASE0413,NORMAL,True,True,RED,Acute coronary syndrome,VIL175,2026-08-26T10:00:00,True
+CASE0414,NORMAL,True,True,YELLOW,Obstetric concern,VIL096,2026-08-26T20:00:00,True
+CASE0415,NORMAL,True,True,YELLOW,Severe skin condition,VIL031,2026-08-26T18:00:00,True
+CASE0416,NORMAL,True,True,GREEN,Child illness requiring referral,VIL052,2026-08-26T19:00:00,True
+CASE0417,NORMAL,True,True,GREEN,Road traffic injury,VIL110,2026-08-26T18:00:00,True
+CASE0418,NORMAL,True,True,RED,Child illness requiring referral,VIL086,2026-08-26T07:00:00,True
+CASE0419,NORMAL,True,True,RED,Suspected appendicitis,VIL132,2026-08-26T08:00:00,True
+CASE0420,NORMAL,True,True,RED,Acute neurological deficit,VIL038,2026-08-27T00:00:00,True
+CASE0421,NORMAL,True,True,GREEN,Child illness requiring referral,VIL178,2026-08-26T05:00:00,True
+CASE0422,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL157,2026-08-26T06:00:00,True
+CASE0423,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL144,2026-08-26T20:00:00,True
+CASE0424,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL032,2026-08-26T21:00:00,True
+CASE0425,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL015,2026-08-26T06:00:00,True
+CASE0426,NORMAL,True,True,GREEN,Recurrent seizure,VIL015,2026-08-26T04:00:00,True
+CASE0427,NORMAL,True,True,GREEN,Acute neurological deficit,VIL079,2026-08-26T11:00:00,True
+CASE0428,NORMAL,True,True,YELLOW,Fracture,VIL160,2026-08-26T14:00:00,True
+CASE0429,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL144,2026-08-26T17:00:00,True
+CASE0430,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL039,2026-08-26T15:00:00,True
+CASE0431,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL114,2026-08-26T07:00:00,True
+CASE0432,NORMAL,True,True,YELLOW,Obstetric concern,VIL058,2026-08-26T06:00:00,True
+CASE0433,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL159,2026-08-26T10:00:00,True
+CASE0434,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL107,2026-08-26T20:00:00,True
+CASE0435,NORMAL,True,True,GREEN,General medical referral,VIL052,2026-08-26T20:00:00,True
+CASE0436,NORMAL,True,True,YELLOW,Kidney failure,VIL123,2026-08-26T07:00:00,True
+CASE0437,NORMAL,True,True,GREEN,Routine primary-care referral,VIL141,2026-08-26T21:00:00,True
+CASE0438,NORMAL,True,True,GREEN,Road traffic injury,VIL138,2026-08-26T16:00:00,True
+CASE0439,NORMAL,True,True,YELLOW,Major trauma,VIL080,2026-08-26T20:00:00,True
+CASE0440,NORMAL,True,True,GREEN,Respiratory distress,VIL159,2026-08-26T08:00:00,True
+CASE0441,NORMAL,True,True,RED,Child illness requiring referral,VIL115,2026-08-26T20:00:00,True
+CASE0442,NORMAL,True,True,GREEN,Asthma exacerbation,VIL107,2026-08-26T04:00:00,True
+CASE0443,NORMAL,True,True,RED,Obstetric concern,VIL102,2026-08-26T10:00:00,True
+CASE0444,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL131,2026-08-26T12:00:00,True
+CASE0445,NORMAL,True,True,RED,Acute abdomen requiring surgical review,VIL030,2026-08-26T19:00:00,True
+CASE0446,NORMAL,True,True,RED,Severe renal disease,VIL076,2026-08-26T22:00:00,True
+CASE0447,NORMAL,True,True,GREEN,Suspected stroke,VIL132,2026-08-27T00:00:00,True
+CASE0448,NORMAL,True,True,GREEN,General medical referral,VIL159,2026-08-26T22:00:00,True
+CASE0449,NORMAL,True,True,GREEN,Asthma exacerbation,VIL123,2026-08-26T04:00:00,True
+CASE0450,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL003,2026-08-26T05:00:00,True
+CASE0451,NORMAL,True,True,YELLOW,Kidney failure,VIL116,2026-08-26T15:00:00,True
+CASE0452,NORMAL,True,True,GREEN,Suspected stroke,VIL159,2026-08-26T18:00:00,True
+CASE0453,NORMAL,True,True,YELLOW,Recurrent seizure,VIL043,2026-08-26T17:00:00,True
+CASE0454,NORMAL,True,True,YELLOW,Severe renal disease,VIL037,2026-08-26T17:00:00,True
+CASE0455,NORMAL,True,True,GREEN,Suspected heart attack,VIL156,2026-08-26T14:00:00,True
+CASE0456,NORMAL,True,True,GREEN,Suspected stroke,VIL153,2026-08-26T19:00:00,True
+CASE0457,NORMAL,True,True,GREEN,Recurrent seizure,VIL119,2026-08-26T16:00:00,True
+CASE0458,NORMAL,True,True,RED,Kidney failure,VIL030,2026-08-26T08:00:00,True
+CASE0459,NORMAL,True,True,RED,Joint injury requiring specialist care,VIL095,2026-08-26T17:00:00,True
+CASE0460,NORMAL,True,True,GREEN,Major bone injury,VIL155,2026-08-26T21:00:00,True
+CASE0461,NORMAL,True,True,RED,Heart rhythm problem,VIL147,2026-08-26T06:00:00,True
+CASE0462,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL046,2026-08-26T19:00:00,True
+CASE0463,NORMAL,True,True,YELLOW,Road traffic injury,VIL102,2026-08-26T19:00:00,True
+CASE0464,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL007,2026-08-26T09:00:00,True
+CASE0465,NORMAL,True,True,RED,General medical referral,VIL163,2026-08-26T16:00:00,True
+CASE0466,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL075,2026-08-26T04:00:00,True
+CASE0467,NORMAL,True,True,YELLOW,Suspected heart attack,VIL095,2026-08-26T13:00:00,True
+CASE0468,NORMAL,True,True,YELLOW,Pregnancy complication,VIL047,2026-08-26T12:00:00,True
+CASE0469,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL060,2026-08-26T09:00:00,True
+CASE0470,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL098,2026-08-26T10:00:00,True
+CASE0471,NORMAL,True,True,YELLOW,Suspected stroke,VIL077,2026-08-26T12:00:00,True
+CASE0472,NORMAL,True,True,YELLOW,Major bone injury,VIL076,2026-08-26T15:00:00,True
+CASE0473,NORMAL,True,True,RED,Obstetric concern,VIL128,2026-08-26T20:00:00,True
+CASE0474,NORMAL,True,True,YELLOW,Renal complication,VIL004,2026-08-26T13:00:00,True
+CASE0475,NORMAL,True,True,GREEN,Major bone injury,VIL052,2026-08-26T06:00:00,True
+CASE0476,NORMAL,True,True,RED,Renal complication,VIL155,2026-08-26T19:00:00,True
+CASE0477,NORMAL,True,True,GREEN,Suspected heart attack,VIL085,2026-08-26T15:00:00,True
+CASE0478,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL111,2026-08-26T14:00:00,True
+CASE0479,NORMAL,True,True,GREEN,Acute abdomen requiring surgical review,VIL085,2026-08-26T14:00:00,True
+CASE0480,NORMAL,True,True,YELLOW,Fracture,VIL030,2026-08-26T17:00:00,True
+CASE0481,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL146,2026-08-26T14:00:00,True
+CASE0482,NORMAL,True,True,GREEN,Recurrent seizure,VIL139,2026-08-26T12:00:00,True
+CASE0483,NORMAL,True,True,YELLOW,Major trauma,VIL116,2026-08-26T06:00:00,True
+CASE0484,NORMAL,True,True,RED,Recurrent seizure,VIL102,2026-08-26T05:00:00,True
+CASE0485,NORMAL,True,True,YELLOW,Severe skin condition,VIL007,2026-08-26T18:00:00,True
+CASE0486,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL067,2026-08-26T17:00:00,True
+CASE0487,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL040,2026-08-26T10:00:00,True
+CASE0488,NORMAL,True,True,GREEN,Pregnancy complication,VIL142,2026-08-26T14:00:00,True
+CASE0489,NORMAL,True,True,GREEN,Renal complication,VIL123,2026-08-26T20:00:00,True
+CASE0490,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL091,2026-08-26T10:00:00,True
+CASE0491,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL094,2026-08-26T13:00:00,True
+CASE0492,NORMAL,True,True,YELLOW,Kidney failure,VIL056,2026-08-26T23:00:00,True
+CASE0493,NORMAL,True,True,YELLOW,Severe renal disease,VIL098,2026-08-26T23:00:00,True
+CASE0494,NORMAL,True,True,YELLOW,Routine primary-care referral,VIL083,2026-08-26T14:00:00,True
+CASE0495,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL125,2026-08-26T23:00:00,True
+CASE0496,NORMAL,True,True,YELLOW,Road traffic injury,VIL157,2026-08-26T04:00:00,True
+CASE0497,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL088,2026-08-26T05:00:00,True
+CASE0498,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL166,2026-08-26T19:00:00,True
+CASE0499,NORMAL,True,True,YELLOW,Kidney failure,VIL087,2026-08-26T05:00:00,True
+CASE0500,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL141,2026-08-26T07:00:00,True
+CASE0501,NORMAL,True,True,GREEN,Asthma exacerbation,VIL051,2026-08-26T16:00:00,True
+CASE0502,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL105,2026-08-26T19:00:00,True
+CASE0503,NORMAL,True,True,RED,Suspected heart attack,VIL060,2026-08-26T04:00:00,True
+CASE0504,NORMAL,True,True,GREEN,Suspected stroke,VIL106,2026-08-26T23:00:00,True
+CASE0505,NORMAL,True,True,RED,Suspected appendicitis,VIL071,2026-08-26T17:00:00,True
+CASE0506,NORMAL,True,True,GREEN,Recurrent seizure,VIL147,2026-08-26T19:00:00,True
+CASE0507,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL087,2026-08-27T00:00:00,True
+CASE0508,NORMAL,True,True,YELLOW,Pregnancy complication,VIL032,2026-08-26T13:00:00,True
+CASE0509,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL014,2026-08-26T08:00:00,True
+CASE0510,NORMAL,True,True,RED,Major bone injury,VIL101,2026-08-26T14:00:00,True
+CASE0511,NORMAL,True,True,GREEN,Suspected appendicitis,VIL076,2026-08-26T19:00:00,True
+CASE0512,NORMAL,True,True,GREEN,Acute neurological deficit,VIL051,2026-08-26T06:00:00,True
+CASE0513,NORMAL,True,True,RED,Acute neurological deficit,VIL123,2026-08-26T09:00:00,True
+CASE0514,NORMAL,True,True,RED,Joint injury requiring specialist care,VIL026,2026-08-27T00:00:00,True
+CASE0515,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL052,2026-08-26T17:00:00,True
+CASE0516,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL079,2026-08-26T10:00:00,True
+CASE0517,NORMAL,True,True,YELLOW,Major trauma,VIL022,2026-08-26T12:00:00,True
+CASE0518,NORMAL,True,True,YELLOW,Respiratory distress,VIL102,2026-08-26T15:00:00,True
+CASE0519,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL148,2026-08-26T10:00:00,True
+CASE0520,NORMAL,True,True,RED,Joint injury requiring specialist care,VIL115,2026-08-26T05:00:00,True
+CASE0521,NORMAL,True,True,YELLOW,Respiratory distress,VIL096,2026-08-26T09:00:00,True
+CASE0522,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL111,2026-08-26T19:00:00,True
+CASE0523,NORMAL,True,True,YELLOW,Obstetric concern,VIL071,2026-08-26T11:00:00,True
+CASE0524,NORMAL,True,True,YELLOW,Renal complication,VIL018,2026-08-26T10:00:00,True
+CASE0525,NORMAL,True,True,GREEN,Suspected stroke,VIL084,2026-08-26T22:00:00,True
+CASE0526,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL164,2026-08-26T05:00:00,True
+CASE0527,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL003,2026-08-26T15:00:00,True
+CASE0528,NORMAL,True,True,RED,Major bone injury,VIL158,2026-08-26T14:00:00,True
+CASE0529,NORMAL,True,True,YELLOW,Joint injury requiring specialist care,VIL171,2026-08-26T07:00:00,True
+CASE0530,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL004,2026-08-26T20:00:00,True
+CASE0531,NORMAL,True,True,YELLOW,Kidney failure,VIL102,2026-08-26T22:00:00,True
+CASE0532,NORMAL,True,True,YELLOW,Pregnancy complication,VIL171,2026-08-26T18:00:00,True
+CASE0533,NORMAL,True,True,RED,Kidney failure,VIL084,2026-08-26T16:00:00,True
+CASE0534,NORMAL,True,True,RED,Obstetric concern,VIL103,2026-08-26T18:00:00,True
+CASE0535,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL096,2026-08-26T22:00:00,True
+CASE0536,NORMAL,True,True,YELLOW,Major trauma,VIL025,2026-08-26T18:00:00,True
+CASE0537,NORMAL,True,True,GREEN,Renal complication,VIL046,2026-08-26T06:00:00,True
+CASE0538,NORMAL,True,True,GREEN,Heart rhythm problem,VIL065,2026-08-26T11:00:00,True
+CASE0539,NORMAL,True,True,GREEN,Obstetric concern,VIL142,2026-08-26T11:00:00,True
+CASE0540,NORMAL,True,True,YELLOW,Heart rhythm problem,VIL071,2026-08-26T04:00:00,True
+CASE0541,NORMAL,True,True,RED,Persistent fever / general medical problem,VIL043,2026-08-26T19:00:00,True
+CASE0542,NORMAL,True,True,RED,Kidney failure,VIL062,2026-08-26T18:00:00,True
+CASE0543,NORMAL,True,True,YELLOW,Severe chest pain with cardiac suspicion,VIL017,2026-08-26T15:00:00,True
+CASE0544,NORMAL,True,True,GREEN,Recurrent seizure,VIL153,2026-08-26T20:00:00,True
+CASE0545,NORMAL,True,True,GREEN,Fracture,VIL017,2026-08-26T11:00:00,True
+CASE0546,NORMAL,True,True,GREEN,Major bone injury,VIL085,2026-08-26T05:00:00,True
+CASE0547,NORMAL,True,True,GREEN,Fracture,VIL071,2026-08-26T09:00:00,True
+CASE0548,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL016,2026-08-26T12:00:00,True
+CASE0549,NORMAL,True,True,GREEN,Obstetric concern,VIL078,2026-08-26T23:00:00,True
+CASE0550,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL108,2026-08-26T05:00:00,True
+CASE0551,NORMAL,True,True,YELLOW,Pregnancy complication,VIL037,2026-08-26T16:00:00,True
+CASE0552,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL099,2026-08-26T14:00:00,True
+CASE0553,NORMAL,True,True,GREEN,Joint injury requiring specialist care,VIL041,2026-08-26T23:00:00,True
+CASE0554,NORMAL,True,True,RED,Suspected stroke,VIL073,2026-08-26T11:00:00,True
+CASE0555,NORMAL,True,True,GREEN,Severe breathing difficulty,VIL089,2026-08-26T23:00:00,True
+CASE0556,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL173,2026-08-26T23:00:00,True
+CASE0557,NORMAL,True,True,GREEN,Acute coronary syndrome,VIL054,2026-08-26T12:00:00,True
+CASE0558,NORMAL,True,True,GREEN,Asthma exacerbation,VIL004,2026-08-26T09:00:00,True
+CASE0559,NORMAL,True,True,RED,Suspected appendicitis,VIL044,2026-08-26T21:00:00,True
+CASE0560,NORMAL,True,True,GREEN,Asthma exacerbation,VIL118,2026-08-27T00:00:00,True
+CASE0561,NORMAL,True,True,GREEN,Child illness requiring referral,VIL094,2026-08-26T13:00:00,True
+CASE0562,NORMAL,True,True,RED,Road traffic injury,VIL128,2026-08-26T14:00:00,True
+CASE0563,NORMAL,True,True,RED,Kidney failure,VIL028,2026-08-26T17:00:00,True
+CASE0564,NORMAL,True,True,RED,Asthma exacerbation,VIL032,2026-08-27T00:00:00,True
+CASE0565,NORMAL,True,True,YELLOW,Suspected heart attack,VIL172,2026-08-26T19:00:00,True
+CASE0566,NORMAL,True,True,RED,Heart rhythm problem,VIL051,2026-08-26T17:00:00,True
+CASE0567,NORMAL,True,True,GREEN,Acute neurological deficit,VIL009,2026-08-26T11:00:00,True
+CASE0568,NORMAL,True,True,RED,Severe skin condition,VIL051,2026-08-26T10:00:00,True
+CASE0569,NORMAL,True,True,YELLOW,Fracture,VIL144,2026-08-26T18:00:00,True
+CASE0570,NORMAL,True,True,YELLOW,Severe breathing difficulty,VIL046,2026-08-26T14:00:00,True
+CASE0571,NORMAL,True,True,RED,Severe skin condition,VIL108,2026-08-26T04:00:00,True
+CASE0572,NORMAL,True,True,YELLOW,Suspected appendicitis,VIL059,2026-08-26T07:00:00,True
+CASE0573,NORMAL,True,True,RED,Obstetric concern,VIL090,2026-08-26T13:00:00,True
+CASE0574,NORMAL,True,True,RED,Severe skin condition,VIL024,2026-08-26T22:00:00,True
+CASE0575,NORMAL,True,True,YELLOW,Recurrent seizure,VIL122,2026-08-27T00:00:00,True
+CASE0576,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL133,2026-08-26T20:00:00,True
+CASE0577,NORMAL,True,True,RED,Paediatric emergency concern,VIL125,2026-08-26T14:00:00,True
+CASE0578,NORMAL,True,True,GREEN,Severe chest pain with cardiac suspicion,VIL158,2026-08-27T00:00:00,True
+CASE0579,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL033,2026-08-26T12:00:00,True
+CASE0580,NORMAL,True,True,YELLOW,Persistent fever / general medical problem,VIL115,2026-08-26T06:00:00,True
+CASE0581,NORMAL,True,True,RED,Child illness requiring referral,VIL075,2026-08-26T04:00:00,True
+CASE0582,NORMAL,True,True,YELLOW,Renal complication,VIL010,2026-08-26T19:00:00,True
+CASE0583,NORMAL,True,True,GREEN,Paediatric emergency concern,VIL068,2026-08-26T08:00:00,True
+CASE0584,NORMAL,True,True,YELLOW,Suspected heart attack,VIL119,2026-08-26T17:00:00,True
+CASE0585,NORMAL,True,True,GREEN,Major bone injury,VIL129,2026-08-26T09:00:00,True
+CASE0586,NORMAL,True,True,RED,Suspected appendicitis,VIL176,2026-08-26T09:00:00,True
+CASE0587,NORMAL,True,True,YELLOW,Major trauma,VIL050,2026-08-26T19:00:00,True
+CASE0588,NORMAL,True,True,GREEN,Recurrent seizure,VIL134,2026-08-26T17:00:00,True
+CASE0589,NORMAL,True,True,YELLOW,Acute neurological deficit,VIL125,2026-08-26T20:00:00,True
+CASE0590,NORMAL,True,True,YELLOW,Acute coronary syndrome,VIL100,2026-08-26T16:00:00,True
+CASE0591,NORMAL,True,True,GREEN,Suspected appendicitis,VIL011,2026-08-26T23:00:00,True
+CASE0592,NORMAL,True,True,YELLOW,Acute abdomen requiring surgical review,VIL008,2026-08-26T22:00:00,True
+CASE0593,NORMAL,True,True,YELLOW,Asthma exacerbation,VIL065,2026-08-26T05:00:00,True
+CASE0594,NORMAL,True,True,GREEN,Severe skin condition,VIL042,2026-08-26T15:00:00,True
+CASE0595,NORMAL,True,True,YELLOW,Paediatric emergency concern,VIL019,2026-08-26T09:00:00,True
+CASE0596,NORMAL,True,True,RED,General medical referral,VIL130,2026-08-26T06:00:00,True
+CASE0597,NORMAL,True,True,YELLOW,Child illness requiring referral,VIL138,2026-08-26T07:00:00,True
+CASE0598,NORMAL,True,True,GREEN,Persistent fever / general medical problem,VIL081,2026-08-26T19:00:00,True
+CASE0599,NORMAL,True,True,GREEN,Routine primary-care referral,VIL081,2026-08-26T09:00:00,True
+CASE0600,NORMAL,True,True,GREEN,Routine primary-care referral,VIL117,2026-08-26T19:00:00,True

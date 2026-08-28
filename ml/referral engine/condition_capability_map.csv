@@ -1,0 +1,29 @@
+condition_id,suspected_condition,clinical_category,required_capability,input_mode,is_synthetic
+COND001,Acute coronary syndrome,cardiac,cardiology,dropdown_recommended,True
+COND002,Suspected heart attack,cardiac,cardiology,dropdown_recommended,True
+COND003,Severe chest pain with cardiac suspicion,cardiac,cardiology,dropdown_recommended,True
+COND004,Heart rhythm problem,cardiac,cardiology,dropdown_recommended,True
+COND005,Suspected stroke,neurological,neurology,dropdown_recommended,True
+COND006,Recurrent seizure,neurological,neurology,dropdown_recommended,True
+COND007,Acute neurological deficit,neurological,neurology,dropdown_recommended,True
+COND008,Kidney failure,renal,nephrology,dropdown_recommended,True
+COND009,Severe renal disease,renal,nephrology,dropdown_recommended,True
+COND010,Renal complication,renal,nephrology,dropdown_recommended,True
+COND011,Fracture,orthopedic,orthopedics,dropdown_recommended,True
+COND012,Major bone injury,orthopedic,orthopedics,dropdown_recommended,True
+COND013,Joint injury requiring specialist care,orthopedic,orthopedics,dropdown_recommended,True
+COND014,Severe breathing difficulty,respiratory,respiratory_support,dropdown_recommended,True
+COND015,Asthma exacerbation,respiratory,respiratory_support,dropdown_recommended,True
+COND016,Respiratory distress,respiratory,respiratory_support,dropdown_recommended,True
+COND017,Pregnancy complication,maternal,maternity,dropdown_recommended,True
+COND018,Obstetric concern,maternal,maternity,dropdown_recommended,True
+COND019,Child illness requiring referral,paediatric,pediatrics,dropdown_recommended,True
+COND020,Paediatric emergency concern,paediatric,pediatrics,dropdown_recommended,True
+COND021,Major trauma,trauma,trauma_stabilization,dropdown_recommended,True
+COND022,Road traffic injury,trauma,trauma_stabilization,dropdown_recommended,True
+COND023,Acute abdomen requiring surgical review,surgical,surgery,dropdown_recommended,True
+COND024,Suspected appendicitis,surgical,surgery,dropdown_recommended,True
+COND025,Severe skin condition,dermatology,dermatology,dropdown_recommended,True
+COND026,Persistent fever / general medical problem,general,general_medicine,dropdown_recommended,True
+COND027,General medical referral,general,general_medicine,dropdown_recommended,True
+COND028,Routine primary-care referral,primary,primary_care,dropdown_recommended,True

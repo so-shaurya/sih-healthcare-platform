@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sahayata &mdash; log in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161A22; --muted:#5C6472; --faint:#9399A6; --line:#DDE1E8;
+  --bg:#F3F4F2; --surface:#FFFFFF; --surface-2:#F0EEFA;
+  --triage:#463C9E; --triage-dark:#2E265F; --triage-bg:#EEECF9;
+  --green:#2E6B3F; --green-bg:#E5F1E7;
+  --yellow:#93690B; --yellow-bg:#FBF1DC;
+  --red:#A5352F; --red-bg:#FAE7E5;
+  --font-mono:'IBM Plex Mono',monospace; --font-sans:'IBM Plex Sans',sans-serif;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:15px;line-height:1.55;}
+.screen{display:none;}
+.screen.active{display:block;}
+
+/* ============ SPLASH / LOGIN SCREEN ============ */
+#s-splash{
+  min-height:100vh;
+  background:
+    radial-gradient(1100px 500px at 78% -8%, #E9E5FB 0%, transparent 60%),
+    linear-gradient(180deg,#F7F6FD 0%,#F3F1FB 55%,#EFEDFA 100%);
+  display:flex;flex-direction:column;
+}
+.splash-wrap{flex:1;display:grid;grid-template-columns:minmax(340px,460px) 1fr;gap:0;max-width:1320px;width:100%;margin:0 auto;padding:44px 32px 32px;}
+@media (max-width:920px){.splash-wrap{grid-template-columns:1fr;}}
+
+.splash-left{position:relative;padding-right:36px;}
+.splash-logo{display:flex;align-items:center;gap:12px;margin-bottom:34px;}
+.splash-logo .glyph{width:46px;height:46px;border-radius:12px;background:linear-gradient(145deg,var(--triage),var(--triage-dark));display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 16px -6px rgba(70,60,158,.55);}
+.glyph .icon{width:22px;height:22px;}
+.splash-logo .word{font-family:var(--font-mono);font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--triage-dark);}
+.splash-logo .tag{font-size:12.5px;color:var(--muted);margin-top:1px;}
+
+.login-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;box-shadow:0 20px 44px -28px rgba(46,38,95,.35);}
+.login-card h2{font-size:21px;margin:0 0 3px;}
+.login-card .lead{color:var(--muted);font-size:13.5px;margin:0 0 6px;}
+.underline-bar{width:38px;height:3px;border-radius:2px;background:var(--triage);margin:12px 0 22px;}
+
+.field{position:relative;margin-bottom:14px;}
+.field .icon.fi{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--faint);width:16px;height:16px;}
+.field input{width:100%;padding:12px 14px 12px 40px;font:14px var(--font-sans);border:1px solid var(--line);border-radius:10px;background:#fbfbfd;color:var(--ink);}
+.field input:focus{outline:2px solid var(--triage);outline-offset:1px;border-color:var(--triage);background:#fff;}
+.field .toggle-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--faint);cursor:pointer;background:none;border:none;padding:0;}
+.field .toggle-eye .icon{width:16px;height:16px;}
+
+.row-between{display:flex;align-items:center;justify-content:space-between;margin:2px 0 18px;font-size:12.5px;}
+.remember{display:flex;align-items:center;gap:7px;color:var(--muted);}
+.remember input{width:auto;}
+.forgot{color:var(--triage);text-decoration:none;font-weight:500;}
+
+.btn-login{width:100%;padding:13px;border:none;border-radius:10px;background:linear-gradient(135deg,var(--triage),var(--triage-dark));color:#fff;font-size:14.5px;font-weight:600;font-family:inherit;cursor:pointer;box-shadow:0 10px 22px -10px rgba(70,60,158,.6);}
+.btn-login:hover{filter:brightness(1.05);}
+.btn-login:disabled{opacity:.75;cursor:default;}
+
+.demo-hint{margin-top:14px;background:var(--triage-bg);border:1px dashed #C9C2EE;border-radius:10px;padding:10px 12px;font-size:12px;color:var(--triage-dark);text-align:center;}
+.demo-hint b{font-family:var(--font-mono);}
+
+.reg-line{text-align:center;font-size:13px;color:var(--muted);margin-top:18px;}
+.reg-line a{color:var(--triage);font-weight:600;text-decoration:none;cursor:pointer;}
+
+.entry-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+.entry-tab{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 8px;border-radius:10px;border:1px solid var(--line);background:#fbfbfd;color:var(--muted);font:600 13.5px var(--font-sans);cursor:pointer;}
+.entry-tab .icon{width:15px;height:15px;}
+.entry-tab:hover{border-color:var(--triage);color:var(--triage-dark);}
+.entry-tab.active{background:linear-gradient(135deg,var(--triage),var(--triage-dark));border-color:var(--triage);color:#fff;box-shadow:0 8px 18px -10px rgba(70,60,158,.55);}
+
+.entry-panel{display:none;}
+.entry-panel.active{display:block;}
+.reg-grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.reg-grid2 select,.reg-grid2 input{width:100%;padding:12px 14px;font:14px var(--font-sans);border:1px solid var(--line);border-radius:10px;background:#fbfbfd;color:var(--ink);}
+.reg-grid2 select:focus,.reg-grid2 input:focus{outline:2px solid var(--triage);outline-offset:1px;border-color:var(--triage);background:#fff;}
+.login-card select{width:100%;padding:12px 14px;font:14px var(--font-sans);border:1px solid var(--line);border-radius:10px;background:#fbfbfd;color:var(--ink);margin-bottom:14px;}
+.login-card select:focus{outline:2px solid var(--triage);outline-offset:1px;border-color:var(--triage);background:#fff;}
+
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px;}
+.stat{text-align:center;}
+.stat .icon{width:20px;height:20px;color:var(--triage);}
+.stat .lab{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.3;}
+
+/* right side */
+.splash-right{display:flex;flex-direction:column;padding-left:8px;}
+.splash-right .headline{text-align:center;font-size:24px;font-weight:700;color:var(--triage-dark);margin:6px 0 10px;}
+.hr-divider{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--triage);margin-bottom:26px;}
+.hr-divider .ln{width:70px;height:1px;background:#D9D3F2;}
+
+.workflow-row{display:flex;justify-content:center;gap:26px;margin-bottom:38px;flex-wrap:wrap;}
+.wf-step{text-align:center;width:96px;position:relative;}
+.wf-step .circle{width:58px;height:58px;border-radius:50%;background:#fff;border:1px solid #E3DEF6;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 18px -12px rgba(70,60,158,.4);}
+.wf-step .circle .icon{width:24px;height:24px;color:var(--triage);}
+.wf-step .lab{font-size:11.5px;margin-top:8px;color:var(--ink);font-weight:500;line-height:1.25;}
+
+.hero-panel{position:relative;flex:1;border-radius:22px;overflow:hidden;
+  background:url('sahayata-hero.png') center 40%/cover no-repeat;
+  min-height:380px;box-shadow:0 20px 44px -24px rgba(46,38,95,.45);}
+.hero-panel::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(30,22,70,.55) 0%,rgba(30,22,70,0) 38%);}
+
+
+/* ============ MAIN DEMO (existing screens) ============ */
+.shell{display:none;min-height:100vh;background:var(--bg);}
+.shell.show{display:block;}
+.shell-inner{max-width:560px;margin:0 auto;padding:28px 20px 60px;}
+.masthead{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.mark{width:30px;height:30px;border-radius:8px;background:var(--triage);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-size:13px;font-weight:600;}
+h1{font-family:var(--font-mono);font-weight:600;font-size:17px;margin:0;}
+.step-badge{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--triage);background:var(--triage-bg);padding:3px 9px;border-radius:5px;}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;}
+
+h2{font-size:18px;margin:0 0 4px;}
+.subtext{color:var(--muted);font-size:13.5px;margin:0 0 22px;}
+
+.choice-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;}
+.choice{border:1px solid var(--line);border-radius:12px;padding:18px 14px;text-align:center;background:var(--surface);cursor:pointer;}
+.choice:hover{border-color:var(--triage);background:var(--triage-bg);}
+.choice .icon{width:24px;height:24px;color:var(--triage);}
+.choice .t{font-weight:600;margin-top:8px;font-size:14px;}
+.choice .d{color:var(--muted);font-size:12px;margin-top:2px;}
+
+label{display:grid;gap:5px;font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:14px;}
+input,select,textarea{padding:10px 11px;font:14px var(--font-sans);border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%;}
+textarea{min-height:60px;resize:vertical;font-family:var(--font-sans);}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--triage);outline-offset:1px;border-color:var(--triage);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+fieldset{border:none;padding:0;margin:0 0 18px;}
+legend{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);padding:0 0 10px;width:100%;border-bottom:1px solid var(--line);margin-bottom:14px;}
+
+.err{color:var(--red);font-size:12px;margin:-8px 0 12px;display:none;}
+.err.show{display:block;}
+
+.btn{border-radius:10px;padding:12px 18px;font-size:14px;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-family:var(--font-sans);}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn.primary:hover{background:var(--triage-dark);}
+.btn.block{width:100%;}
+.btn.ghost{border-color:transparent;color:var(--muted);}
+.link{background:none;border:none;color:var(--triage);font-size:13px;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;}
+
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #ffffff55;border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:6px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.id-display{background:var(--triage-bg);border:1px dashed var(--triage);border-radius:10px;padding:18px;text-align:center;margin:18px 0;}
+.id-display .lab{font-size:11px;color:var(--triage);text-transform:uppercase;letter-spacing:.06em;font-weight:600;}
+.id-display .val{font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--triage-dark);margin-top:4px;letter-spacing:.03em;}
+
+.symptom-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.symptom{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:13px;cursor:pointer;}
+.symptom input{width:auto;}
+.symptom.checked{border-color:var(--triage);background:var(--triage-bg);}
+
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;background:#fff;color:var(--muted);user-select:none;display:inline-flex;align-items:center;gap:6px;}
+.chip .icon{width:15px;height:15px;}
+.chip:hover{border-color:var(--triage);}
+.chip.active{border-color:var(--triage);background:var(--triage);color:#fff;}
+.chip.active.on-red{border-color:var(--red);background:var(--red);}
+.chip.active.on-yellow{border-color:var(--yellow);background:var(--yellow);}
+.chip-tile{border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;cursor:pointer;background:#fff;display:flex;align-items:center;gap:8px;}
+.chip-tile .icon{width:17px;height:17px;color:var(--faint);}
+.chip-tile.active{border-color:var(--triage);background:var(--triage-bg);color:var(--triage-dark);font-weight:600;}
+.chip-tile.active .icon{color:var(--triage);}
+.tile-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+.pain-row{display:flex;gap:6px;margin-bottom:16px;}
+.pain-chip{flex:1;text-align:center;border:1px solid var(--line);border-radius:8px;padding:8px 0;font-family:var(--font-mono);font-size:13px;cursor:pointer;background:#fff;color:var(--muted);}
+.pain-chip.active{border-color:var(--triage);background:var(--triage);color:#fff;}
+.group-hint{font-size:11.5px;color:var(--faint);margin:-8px 0 10px;}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;}
+.badge.green{background:var(--green-bg);color:var(--green);}
+.badge.yellow{background:var(--yellow-bg);color:var(--yellow);}
+.badge.red{background:var(--red-bg);color:var(--red);}
+.badge.triage{background:var(--triage-bg);color:var(--triage);}
+
+.dev-panel{margin-top:18px;background:#F7F7F5;border:1px dashed var(--line);border-radius:10px;padding:12px 14px;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);white-space:pre-wrap;}
+.dev-panel b{color:var(--ink);}
+.icon{width:1em;height:1em;display:inline-block;vertical-align:-0.14em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2-5 3 9 2-6 2 2h5"/></symbol>
+    <symbol id="i-ambulance" viewBox="0 0 24 24"><path d="M3 16V9a2 2 0 0 1 2-2h9l4 4h1a2 2 0 0 1 2 2v3"/><path d="M3 16h1a2 2 0 1 0 4 0h7a2 2 0 1 0 4 0h2v-3"/><path d="M12 8v5M9.5 10.5h5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5h1a3 3 0 0 0 3-3V6a2 2 0 0 0-1-2Z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5h-1a3 3 0 0 1-3-3V6a2 2 0 0 1 1-2Z"/></symbol>
+    <symbol id="i-chart-bar" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M4 20h16"/></symbol>
+    <symbol id="i-clipboard-list" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z"/><path d="M9 11h6M9 15h6M9 19h3"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="12" r="1.4" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12Z"/></symbol>
+    <symbol id="i-droplet-half-2" viewBox="0 0 24 24"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12Z"/><path d="M5.2 14h13.6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.6 15.6 0 0 1-3.1 4.1M6.6 6.6C4 8.3 2 12 2 12s3.6 7 10 7c1.4 0 2.6-.3 3.7-.8"/><path d="M9.5 9.7A3 3 0 0 0 14.3 14.5"/></symbol>
+    <symbol id="i-first-aid-kit" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 11v6M9 14h6"/></symbol>
+    <symbol id="i-hand-stop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="1.3" fill="currentColor" stroke="none"/><circle cx="15" cy="8.3" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="8" cy="15.3" r="0.9" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-head-question" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9.2 19.5 12 15l2.8 4.5"/><path d="M10.3 7.6a1.7 1.7 0 1 1 2.6 1.4c-.6.4-.9.8-.9 1.5"/><circle cx="12" cy="12.3" r=".2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-8.7C1 9.3 2.4 6 5.7 5.3c1.9-.4 3.7.5 4.7 2 1-1.5 2.8-2.4 4.7-2 3.3.7 4.7 4 3 7C19 16.4 12 21 12 21Z"/></symbol>
+    <symbol id="i-heart-bolt" viewBox="0 0 24 24"><path d="M12 20s-6.2-4.1-8.3-7.7C2.4 10 3.6 7.2 6.4 6.6c1.7-.4 3.3.4 4.2 1.8.9-1.4 2.5-2.2 4.2-1.8 2.8.6 4 3.4 2.7 5.7C15.5 15.5 12 20 12 20Z"/><path d="M11.3 9.5 9.5 13h2l-1 3.2 3-4.2h-2l1-2.5Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-heart-rate-monitor" viewBox="0 0 24 24"><path d="M3 12h4l2-5 3 9 2-6 2 2h5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M13 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M11 8l4 4-4 4"/><path d="M15 12H3"/></symbol>
+    <symbol id="i-lungs" viewBox="0 0 24 24"><path d="M12 3v9"/><path d="M12 12c-1 3-2 4-4 4-2 0-3-1.5-3-4 0-3 1-6 3-7 1.3-.7 2.5 0 3 1"/><path d="M12 12c1 3 2 4 4 4 2 0 3-1.5 3-4 0-3-1-6-3-7-1.3-.7-2.5 0-3 1"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-14 5.3L4 16"/><path d="M4 20v-4h4"/></symbol>
+    <symbol id="i-report-medical" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M12 5v6M9.5 15h5"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 2 L20 5 V11 C20 16 16.5 20 12 22 C7.5 20 4 16 4 11 V5 Z"/><path d="M9 12l2 2 4-4.5"/></symbol>
+    <symbol id="i-shield-plus" viewBox="0 0 24 24"><path d="M12 2 L20 5 V11 C20 16 16.5 20 12 22 C7.5 20 4 16 4 11 V5 Z"/><path d="M12 8v6M9 11h6"/></symbol>
+    <symbol id="i-shield-star" viewBox="0 0 24 24"><path d="M12 2 L20 5 V11 C20 16 16.5 20 12 22 C7.5 20 4 16 4 11 V5 Z"/><path d="M12 8.3l1 2 2.2.3-1.6 1.5.4 2.2-2-1.1-2 1.1.4-2.2-1.6-1.5 2.2-.3Z"/></symbol>
+    <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M6 4v6a4 4 0 0 0 8 0V4"/><path d="M6 4H4.5M14 4h1.5"/><path d="M10 14v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="13" r="1.5"/></symbol>
+    <symbol id="i-stomach" viewBox="0 0 24 24"><path d="M8 3v4c0 2-2 2.5-2 5 0 4 3 8 7 8 3.5 0 6-2.8 6-6.3 0-2-1-3-2.5-3.7"/><path d="M16 3v3.2"/></symbol>
+    <symbol id="i-thermometer" viewBox="0 0 24 24"><path d="M12 3a2 2 0 0 0-2 2v9.5a4 4 0 1 0 4 0V5a2 2 0 0 0-2-2Z"/><path d="M12 15V8"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></symbol>
+    <symbol id="i-user-heart" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.2"/><path d="M4 20c0-3.5 2.7-6.3 6-6.3 1 0 2 .3 2.8.7"/><path d="M17.5 13.8c-2 1.3-2.5 2-2.5 3 0 1.3 1.2 2.2 2.5 3.2 1.3-1 2.5-1.9 2.5-3.2 0-1-.5-1.7-2.5-3Z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6.3 6-6.3s6 2.8 6 6.3"/><path d="M18 8v4M16 10h4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.3.4 4 2.4 4.5 5.8"/></symbol>
+    <symbol id="i-users-group" viewBox="0 0 24 24"><circle cx="8" cy="9" r="2.6"/><circle cx="16" cy="9" r="2.6"/><path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5M11 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="1.6" fill="currentColor" stroke="none"/><path d="M11 8l-3 2 1 4-3 3"/><path d="M11 8l3 1 1 4 3 2"/><path d="M9 14l3 1"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h9a2.5 2.5 0 1 0-2.2-3.7"/><path d="M3 12h13a2.5 2.5 0 1 1-2.2 3.7"/><path d="M3 16h7"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ SCREEN 0: LOGIN SPLASH ============ -->
+<div class="screen active" id="s-splash">
+  <div class="splash-wrap">
+
+    <div class="splash-left">
+      <div class="splash-logo">
+        <div class="glyph"><svg class="icon"><use href="#i-shield-plus"></use></svg></div>
+        <div>
+          <div class="word">Sahayata</div>
+          <div class="tag">Smart Patient Entry &amp; Triage System</div>
+        </div>
+      </div>
+
+      <div class="login-card">
+        <h2 id="entryTitle">Welcome</h2>
+        <p class="lead" id="entryLead">Log in with your patient ID, or register for your first visit</p>
+        <div class="underline-bar"></div>
+
+        <div class="entry-tabs" role="tablist">
+          <button type="button" class="entry-tab active" id="tabLogin" onclick="switchEntryTab('login')">
+            <svg class="icon"><use href="#i-login"></use></svg> Log in
+          </button>
+          <button type="button" class="entry-tab" id="tabRegister" onclick="switchEntryTab('register')">
+            <svg class="icon"><use href="#i-user-plus"></use></svg> New registration
+          </button>
+        </div>
+
+        <!-- LOG IN PANEL -->
+        <div class="entry-panel active" id="panelLogin">
+          <form id="loginForm">
+            <div class="field">
+              <svg class="icon fi"><use href="#i-clipboard-list"></use></svg>
+              <input type="text" name="regId" placeholder="Registration ID (e.g. PID-2026-1000)" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <svg class="icon fi"><use href="#i-user"></use></svg>
+              <input type="tel" name="phone" placeholder="Phone number" autocomplete="off" required>
+            </div>
+            <div class="err" id="loginErr">No matching record found. Check the ID and phone, or register instead.</div>
+            <button type="submit" class="btn-login" id="loginBtn">Log in</button>
+          </form>
+          <div class="demo-hint">Demo record &mdash; ID <b>PID-2026-1000</b> &middot; Phone <b>9876543210</b></div>
+        </div>
+
+        <!-- NEW REGISTRATION PANEL -->
+        <div class="entry-panel" id="panelRegister">
+          <form id="registerForm">
+            <div class="field">
+              <svg class="icon fi"><use href="#i-user"></use></svg>
+              <input type="text" name="name" placeholder="Full name" autocomplete="off" required>
+            </div>
+            <div class="reg-grid2" style="margin-bottom:14px;">
+              <input type="number" name="age" min="0" max="120" placeholder="Age" required>
+              <select name="gender" required>
+                <option value="">Gender</option><option>Female</option><option>Male</option><option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <svg class="icon fi"><use href="#i-user"></use></svg>
+              <input type="tel" name="phone" placeholder="Phone number (10-digit mobile)" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <svg class="icon fi"><use href="#i-clipboard-list"></use></svg>
+              <input type="text" name="location" placeholder="Village / location" autocomplete="off" required>
+            </div>
+            <select name="patient_type" required>
+              <option value="Normal">Patient type: Normal</option>
+              <option value="Pregnant">Pregnant</option>
+              <option value="Private">Private / sensitive matter</option>
+            </select>
+            <div class="err" id="registerErr">Please fill in all required fields.</div>
+            <button type="submit" class="btn-login" id="registerBtn">Create registration</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="stat"><svg class="icon"><use href="#i-users-group"></use></svg><div class="lab">Community<br>First</div></div>
+        <div class="stat"><svg class="icon"><use href="#i-shield-check"></use></svg><div class="lab">Timely<br>Triage</div></div>
+        <div class="stat"><svg class="icon"><use href="#i-chart-bar"></use></svg><div class="lab">Smarter<br>Decisions</div></div>
+        <div class="stat"><svg class="icon"><use href="#i-heart-rate-monitor"></use></svg><div class="lab">Better<br>Outcomes</div></div>
+      </div>
+    </div>
+
+    <div class="splash-right">
+      <div class="headline">Better Care. Stronger Communities.</div>
+      <div class="hr-divider"><span class="ln"></span><svg class="icon"><use href="#i-heart"></use></svg><span class="ln"></span></div>
+
+      <div class="workflow-row">
+        <div class="wf-step"><div class="circle"><svg class="icon"><use href="#i-clipboard-list"></use></svg></div><div class="lab">Register Patient</div></div>
+        <div class="wf-step"><div class="circle"><svg class="icon"><use href="#i-stethoscope"></use></svg></div><div class="lab">Check Vitals &amp; Symptoms</div></div>
+        <div class="wf-step"><div class="circle"><svg class="icon"><use href="#i-brain"></use></svg></div><div class="lab">ML Triage (Priority)</div></div>
+        <div class="wf-step"><div class="circle"><svg class="icon"><use href="#i-users"></use></svg></div><div class="lab">Specialist Routing</div></div>
+        <div class="wf-step"><div class="circle"><svg class="icon"><use href="#i-report-medical"></use></svg></div><div class="lab">Treatment &amp; Follow-up</div></div>
+      </div>
+
+      <div class="hero-panel"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+// Mock Supabase "patients" table, standing in for a real
+// SELECT ... WHERE id = ? AND phone = ? query. Also used as the
+// local fallback data for Api.lookupPatient() if the backend is down.
+const mockDB = {
+  'PID-2026-1000': {
+    phone: '9876543210', name: 'Sunita Devi', age: 34, gender: 'Female',
+    location: 'Sugauli', patient_type: 'Normal',
+    history: 'Gestational hypertension, 2nd pregnancy',
+    lastVisit: { date: '2026-08-10',
+      vitals: { temp: 99.1, bp: '150/95', hr: 96, spo2: 94, rr: 22 },
+      symptoms: ['Breathlessness', 'Chest pain'], severity: 'Severe' }
+  },
+  'PID-2026-1001': {
+    phone: '9123456780', name: 'Deepak Singh', age: 45, gender: 'Male',
+    location: 'Areraj', patient_type: 'Normal',
+    history: 'No known conditions',
+    lastVisit: { date: '2026-07-28',
+      vitals: { temp: 98.4, bp: '118/76', hr: 74, spo2: 98, rr: 16 },
+      symptoms: ['Headache'], severity: 'Mild' }
+  }
+};
+
+/* api.js loaded above provides window.Api */
+function genRegId(){
+  const n = Math.floor(1000 + Math.random()*9000);
+  return 'PID-2026-' + n;
+}
+
+function withLoading(btn, doneText, work){
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Working\u2026';
+  setTimeout(()=>{
+    work();
+    btn.disabled = false;
+    btn.innerHTML = original;
+  }, 600);
+}
+
+/* ---------- Entry card tab switching (log in / new registration) ---------- */
+function switchEntryTab(tab){
+  const isLogin = tab === 'login';
+  document.getElementById('tabLogin').classList.toggle('active', isLogin);
+  document.getElementById('tabRegister').classList.toggle('active', !isLogin);
+  document.getElementById('panelLogin').classList.toggle('active', isLogin);
+  document.getElementById('panelRegister').classList.toggle('active', !isLogin);
+  document.getElementById('entryTitle').textContent = isLogin ? 'Welcome Back' : 'New Registration';
+  document.getElementById('entryLead').textContent = isLogin
+    ? 'Enter your registration ID and phone number to continue'
+    : 'First visit? Create your patient record below';
+  document.querySelectorAll('.err.show').forEach(e=>e.classList.remove('show'));
+}
+
+/* ---------- New registration: POSTs to the backend (Api.createPatient);
+   falls back to a locally generated ID if the backend isn't up yet. ---------- */
+document.getElementById('registerForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  const err = document.getElementById('registerErr');
+  if(!data.name || !data.age || !data.gender || !data.phone || !data.location){
+    err.classList.add('show'); return;
+  }
+  err.classList.remove('show');
+  const btn = document.getElementById('registerBtn');
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Working\u2026';
+
+  const patient = await Api.createPatient(data, () => ({...data, id: genRegId()}));
+
+  btn.disabled = false;
+  btn.innerHTML = original;
+  sessionStorage.setItem('sahayata_patient', JSON.stringify(patient));
+  sessionStorage.setItem('sahayata_action', 'register');
+  window.location.href = 'sahayata-patient-entry.html';
+});
+
+/* ---------- Log in: looks the patient up via Api.lookupPatient;
+   falls back to the local mockDB if the backend isn't up yet. ---------- */
+document.getElementById('loginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  const err = document.getElementById('loginErr');
+  const regId = (data.regId || '').trim();
+  const phone = (data.phone || '').trim();
+
+  const btn = document.getElementById('loginBtn');
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Working\u2026';
+
+  const record = await Api.lookupPatient(regId, () => {
+    const local = mockDB[regId];
+    return (local && local.phone === phone) ? local : null;
+  });
+
+  btn.disabled = false;
+  btn.innerHTML = original;
+
+  if(!record){ err.classList.add('show'); return; }
+  err.classList.remove('show');
+  const patient = { id: regId, ...record };
+  sessionStorage.setItem('sahayata_patient', JSON.stringify(patient));
+  sessionStorage.setItem('sahayata_action', 'login');
+  window.location.href = 'sahayata-patient-entry.html';
+});
+</script>
+
+</body>
+</html>

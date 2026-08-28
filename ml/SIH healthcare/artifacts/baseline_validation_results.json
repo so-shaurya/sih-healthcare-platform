@@ -1,0 +1,98 @@
+{
+  "source": "Official CDC NHAMCS ED Stata files, 2018-2022",
+  "target": "IMMEDR; valid values 1-5 only",
+  "display_mapping_note": "Prototype only: 1-2 RED, 3 YELLOW, 4-5 GREEN. Requires clinician validation.",
+  "features": [
+    "AGE",
+    "SEX",
+    "TEMPF",
+    "PULSE",
+    "RESPR",
+    "BPSYS",
+    "BPDIAS",
+    "POPCT",
+    "PAINSCALE",
+    "ARREMS",
+    "RFV1",
+    "RFV2",
+    "RFV3",
+    "RFV4",
+    "RFV5",
+    "ASTHMA",
+    "CANCER",
+    "CHF",
+    "CKD",
+    "COPD",
+    "DEPRN",
+    "HTN",
+    "OBESITY",
+    "OSA",
+    "SUBSTAB"
+  ],
+  "model": "HistGradientBoostingClassifier",
+  "best_hyperparameters": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 31,
+    "max_iter": 300,
+    "l2_regularization": 0.0,
+    "min_samples_leaf": 50
+  },
+  "split": {
+    "train": "2018-2020",
+    "validation": "2021",
+    "test_reserved": "2022"
+  },
+  "validation": {
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "confusion_matrix": [
+      [
+        50,
+        78,
+        44,
+        43,
+        14
+      ],
+      [
+        126,
+        965,
+        326,
+        164,
+        70
+      ],
+      [
+        207,
+        1437,
+        2236,
+        1195,
+        354
+      ],
+      [
+        66,
+        271,
+        481,
+        1458,
+        491
+      ],
+      [
+        12,
+        56,
+        54,
+        144,
+        153
+      ]
+    ],
+    "macro_f1": 0.36176530819371444,
+    "weighted_f1": 0.4825593444898244,
+    "balanced_accuracy": 0.4213553353730931,
+    "class_1_recall": 0.2183406113537118,
+    "class_2_recall": 0.5844942459115687,
+    "red_recall": 0.6484042553191489,
+    "actual_red_predicted_green_count": 291
+  }
+}

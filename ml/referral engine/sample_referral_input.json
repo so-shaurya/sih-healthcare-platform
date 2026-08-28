@@ -1,0 +1,14 @@
+{
+  "patient_id": "PAT001",
+  "patient_flow": "NORMAL",
+  "doctor_reviewed": true,
+  "referral_required": true,
+  "criticality": "RED",
+  "suspected_condition": "Suspected heart attack",
+  "patient_location": {
+    "village_id": "VIL001",
+    "village_name": "Arogya Sahi 001",
+    "district": "Cuttack"
+  },
+  "arrival_datetime": "2026-08-26T14:00:00"
+}

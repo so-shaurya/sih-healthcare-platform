@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAT_TEST_002",
+  "patient_flow": "NORMAL",
+  "doctor_reviewed": true,
+  "referral_required": true,
+  "criticality": "YELLOW",
+  "suspected_condition": "Kidney failure",
+  "patient_location": {
+    "village_id": "VIL091"
+  },
+  "arrival_datetime": "2026-08-26T10:00:00"
+}

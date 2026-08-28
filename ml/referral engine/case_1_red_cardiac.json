@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAT_TEST_001",
+  "patient_flow": "NORMAL",
+  "doctor_reviewed": true,
+  "referral_required": true,
+  "criticality": "RED",
+  "suspected_condition": "Suspected heart attack",
+  "patient_location": {
+    "village_id": "VIL001"
+  },
+  "arrival_datetime": "2026-08-26T14:00:00"
+}

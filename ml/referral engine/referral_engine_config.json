@@ -1,0 +1,11 @@
+{
+  "engine_version": "2.0-prototype",
+  "scope": "Normal-patient referral routing after triage + doctor referral decision",
+  "location_strategy": "Village lookup to lat/lon, with optional GPS coordinate override",
+  "distance_method": "Haversine straight-line distance; road travel-time API is a future enhancement",
+  "ranking_algorithm": "Hard safety/eligibility filters + criticality-aware weighted MCDA",
+  "forecast_algorithm": "HistGradientBoostingRegressor trained on synthetic facility load history",
+  "top_k_default": 3,
+  "special_case_behavior": "Bypass normal referral engine and follow special-case queue/routing flow",
+  "prototype_only": true
+}

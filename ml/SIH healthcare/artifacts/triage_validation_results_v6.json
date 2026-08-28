@@ -1,0 +1,227 @@
+{
+  "source": "Official CDC NHAMCS ED Stata files, 2018-2022",
+  "target": {
+    "source_variable": "IMMEDR",
+    "project_mapping": {
+      "1-2": "RED",
+      "3": "YELLOW",
+      "4-5": "GREEN"
+    }
+  },
+  "split": {
+    "train": "2018-2020",
+    "validation": "2021",
+    "test_reserved": "2022"
+  },
+  "test_rows_reserved_and_not_predicted": 10207,
+  "numeric_features": [
+    "AGE",
+    "TEMPF",
+    "PULSE",
+    "RESPR",
+    "BPSYS",
+    "BPDIAS",
+    "POPCT",
+    "PAINSCALE",
+    "TOTCHRON",
+    "VITALS_MISSING_COUNT",
+    "RFV_COUNT",
+    "BP_INCONSISTENT",
+    "PULSE_PRESSURE",
+    "MAP_APPROX",
+    "SHOCK_INDEX",
+    "CHRONIC_POSITIVE_COUNT",
+    "NEWS2_PARTIAL_SCORE",
+    "NEWS2_RED_PARAMETER_COUNT",
+    "NEWS2_COMPONENTS_MEASURED",
+    "NEWS2_RESPR_SCORE",
+    "NEWS2_POPCT_SCORE",
+    "NEWS2_BPSYS_SCORE",
+    "NEWS2_PULSE_SCORE",
+    "NEWS2_TEMPF_SCORE",
+    "RFV_CRITICAL_FLAG",
+    "RFV_URGENT_FLAG"
+  ],
+  "categorical_features": [
+    "SEX",
+    "ARREMS",
+    "AMBTRANSFER",
+    "SEEN72",
+    "EPISODE",
+    "RFV1",
+    "RFV2",
+    "RFV3",
+    "RFV4",
+    "RFV5",
+    "ASTHMA",
+    "CANCER",
+    "CEBVD",
+    "CHF",
+    "CKD",
+    "COPD",
+    "DEPRN",
+    "HYPLIPID",
+    "HTN",
+    "CAD",
+    "OBESITY",
+    "OSA",
+    "OSTPRSIS",
+    "SUBSTAB"
+  ],
+  "architecture": "two_stage: stage1 RED-vs-rest (HGB) -> stage2 YELLOW-vs-GREEN (HGB) -> safety guard",
+  "stage1": {
+    "hyperparameters": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "max_iter": 300,
+      "l2_regularization": 0.5,
+      "min_samples_leaf": 30
+    },
+    "red_weight_multiplier": 2.0,
+    "threshold": 0.475,
+    "validation_recall": 0.851063829787234,
+    "validation_precision": 0.2874079396443327
+  },
+  "stage2": {
+    "hyperparameters": {
+      "learning_rate": 0.1,
+      "max_leaf_nodes": 31
+    },
+    "validation_macro_f1_yellow_green": 0.7185301530636781
+  },
+  "prototype_min_red_recall_target": 0.85,
+  "validation_before_guard": {
+    "confusion_matrix": [
+      [
+        1600,
+        122,
+        158
+      ],
+      [
+        3049,
+        1311,
+        1069
+      ],
+      [
+        918,
+        391,
+        1877
+      ]
+    ],
+    "macro_f1": 0.46267638995344756,
+    "weighted_f1": 0.44515726854445287,
+    "balanced_accuracy": 0.5605615843159693,
+    "red_recall": 0.851063829787234,
+    "red_precision": 0.2874079396443327,
+    "yellow_recall": 0.2414809357156014,
+    "green_recall": 0.5891399874450722,
+    "red_to_yellow_count": 122,
+    "red_to_green_count": 158,
+    "severe_undertriage_rate": 0.08404255319148936
+  },
+  "validation_after_guard": {
+    "confusion_matrix": [
+      [
+        1601,
+        126,
+        153
+      ],
+      [
+        3058,
+        1330,
+        1041
+      ],
+      [
+        930,
+        426,
+        1830
+      ]
+    ],
+    "macro_f1": 0.4606375375419105,
+    "weighted_f1": 0.44392253999779374,
+    "balanced_accuracy": 0.5569881171239263,
+    "red_recall": 0.8515957446808511,
+    "red_precision": 0.28645553766326715,
+    "yellow_recall": 0.2449806594216246,
+    "green_recall": 0.5743879472693032,
+    "red_to_yellow_count": 126,
+    "red_to_green_count": 153,
+    "severe_undertriage_rate": 0.08138297872340426
+  },
+  "safety_guard": {
+    "layer_0_rfv_critical": "RFV chief complaint in RFV_CRITICAL_FAMILIES -> force RED",
+    "layer_1_critical_vital_backstop": {
+      "POPCT": [
+        70.0,
+        null
+      ],
+      "PULSE": [
+        20.0,
+        220.0
+      ],
+      "BPSYS": [
+        50.0,
+        null
+      ],
+      "RESPR": [
+        4.0,
+        60.0
+      ],
+      "TEMPF": [
+        86.0,
+        107.0
+      ]
+    },
+    "layer_2_scope": "adult age >= 16 only for NEWS2 logic",
+    "news2_partial_ge_7": "force project RED",
+    "news2_partial_ge_5_or_single_parameter_3_or_rfv_urgent_or_bp_inconsistent": "block GREEN; minimum YELLOW",
+    "rfv_family_labels": {
+      "5835": "Dead on arrival (DOA)",
+      "5836": "Respiratory arrest",
+      "5837": "Cardiac arrest",
+      "5838": "Drowning",
+      "5839": "Cardiopulmonary arrest",
+      "5840": "Unconscious on arrival",
+      "5842": "Altered level of consciousness",
+      "5820": "Suicide attempt",
+      "5818": "Intentional self-mutilation",
+      "4401": "Cardiopulmonary resuscitation",
+      "1050": "Chest pain and related symptoms",
+      "1030": "Fainting (syncope)",
+      "1260": "Abnormal pulsations and palpitations",
+      "1265": "Heart pain",
+      "1270": "Other symptoms of the heart",
+      "1415": "Shortness of breath",
+      "1420": "Labored or difficult breathing (dyspnea)",
+      "1430": "Breathing problems, NEC",
+      "1200": "Abnormal involuntary movements",
+      "1205": "Convulsions",
+      "1230": "Weakness (neurologic)",
+      "1235": "Disorders of speech, speech disturbance",
+      "1580": "Gastrointestinal bleeding",
+      "1070": "Bleeding, site unspecified",
+      "2031": "Sepsis, septicemia",
+      "2525": "Cerebrovascular disease",
+      "5900": "Accidental poisoning",
+      "5905": "Adverse effect of medication",
+      "5910": "Adverse effect of drug abuse",
+      "5915": "Adverse effect of alcohol",
+      "5841": "State of consciousness not specified",
+      "5815": "Violence, NOS",
+      "5830": "Rape"
+    },
+    "note": "Prototype policy; requires clinician review before real-world use.",
+    "validation_overrides": {
+      "forced_red_rfv_critical_count": 2,
+      "forced_red_critical_vital_backstop_count": 20,
+      "forced_red_news2_count": 0,
+      "green_blocked_to_yellow_count": 64,
+      "adult_news2_high_count": 121,
+      "adult_news2_urgent_count": 800,
+      "bp_inconsistent_count": 11,
+      "rfv_critical_count": 153,
+      "rfv_urgent_count": 2692,
+      "age_unknown_count": 0
+    }
+  }
+}

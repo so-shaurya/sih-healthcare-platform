@@ -1,0 +1,23 @@
+{
+  "algorithm": "HistGradientBoostingRegressor",
+  "target": "load_2h_ahead_pct",
+  "forecast_horizon_hours": 2,
+  "train_rows": 42253,
+  "test_rows": 10585,
+  "temporal_cutoff": "2026-08-11 17:00:00",
+  "mae": 1.9047,
+  "rmse": 2.5909,
+  "r2": 0.9674,
+  "features": [
+    "facility_id",
+    "facility_level",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "baseline_load_pct",
+    "current_load_pct",
+    "referrals_last_hour",
+    "rolling_3h_load_pct"
+  ],
+  "synthetic_data_only": true
+}

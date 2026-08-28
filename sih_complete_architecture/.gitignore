@@ -1,0 +1,7 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+data/prototype.db
+engines/triage/artifacts/*.pkl
+engines/referral/models/*.pkl

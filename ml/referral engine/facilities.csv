@@ -1,0 +1,30 @@
+facility_id,facility_name,district,state,latitude,longitude,facility_type,facility_level,emergency_receiving,baseline_load_pct,max_referral_capacity_per_hour,active,is_synthetic
+FAC001,Demo Niramaya Khordha District General Hospital 01,Khordha,Odisha,20.351891,85.723488,District Hospital,4,True,71.0,12,True,True
+FAC002,Demo Swasthya Cuttack Community Health Centre 02,Cuttack,Odisha,20.375382,85.968123,Community Health Centre,3,True,56.5,7,True,True
+FAC003,Demo Aarogya Puri Primary Health Centre 03,Puri,Odisha,19.924067,85.789003,Primary Health Centre,2,False,58.8,4,True,True
+FAC004,Demo Niramaya Dhenkanal Community Care Centre 04,Dhenkanal,Odisha,20.772785,85.630875,Community Health Centre,3,True,59.6,7,True,True
+FAC005,Demo Samarth Nayagarh Health & Wellness Centre 05,Nayagarh,Odisha,20.125749,85.225876,Health & Wellness Centre,1,False,53.0,2,True,True
+FAC006,Demo Samarth Kendrapara Community Care Centre 06,Kendrapara,Odisha,20.574736,86.549038,Community Health Centre,3,True,70.7,7,True,True
+FAC007,Demo Ujjwal Khordha Primary Health Centre 07,Khordha,Odisha,20.192211,85.799561,Primary Health Centre,2,False,43.0,4,True,True
+FAC008,Demo Pragati Cuttack Primary Health Centre 08,Cuttack,Odisha,20.518111,86.009892,Primary Health Centre,2,False,62.0,4,True,True
+FAC009,Demo Navjeevan Puri District Care Hospital 09,Puri,Odisha,19.750671,85.791794,District Hospital,4,True,72.2,12,True,True
+FAC010,Demo Sparsh Dhenkanal District Care Hospital 10,Dhenkanal,Odisha,20.658729,85.492489,District Hospital,4,True,59.6,12,True,True
+FAC011,Demo JanCare Nayagarh Primary Health Centre 11,Nayagarh,Odisha,20.148153,84.986562,Primary Health Centre,2,False,61.8,4,True,True
+FAC012,Demo Pragati Kendrapara Community Care Centre 12,Kendrapara,Odisha,20.380063,86.409885,Community Health Centre,3,True,49.8,7,True,True
+FAC013,Demo JanCare Khordha Primary Health Centre 13,Khordha,Odisha,20.329042,85.880033,Primary Health Centre,2,False,35.6,4,True,True
+FAC014,Demo Sparsh Cuttack Community Care Centre 14,Cuttack,Odisha,20.382447,86.010607,Community Health Centre,3,True,63.7,7,True,True
+FAC015,Demo JanCare Puri Health & Wellness Centre 15,Puri,Odisha,19.919501,85.881907,Health & Wellness Centre,1,False,39.0,2,True,True
+FAC016,Demo Sanjeevani Dhenkanal Regional Medical Centre 16,Dhenkanal,Odisha,20.655461,85.710198,Tertiary Hospital,5,True,65.9,18,True,True
+FAC017,Demo Asha Nayagarh Advanced Medical Centre 17,Nayagarh,Odisha,20.247737,85.068993,Tertiary Hospital,5,True,71.3,18,True,True
+FAC018,Demo Niramaya Kendrapara Primary Health Centre 18,Kendrapara,Odisha,20.395955,86.398339,Primary Health Centre,2,False,58.3,4,True,True
+FAC019,Demo Samarth Khordha Health & Wellness Centre 19,Khordha,Odisha,20.267786,85.820825,Health & Wellness Centre,1,False,28.4,2,True,True
+FAC020,Demo Navjeevan Cuttack District General Hospital 20,Cuttack,Odisha,20.565512,86.010676,District Hospital,4,True,68.8,12,True,True
+FAC021,Demo Aarogya Puri Regional Medical Centre 21,Puri,Odisha,19.914063,85.841050,Tertiary Hospital,5,True,69.0,18,True,True
+FAC022,Demo Asha Dhenkanal Health & Wellness Centre 22,Dhenkanal,Odisha,20.658298,85.572714,Health & Wellness Centre,1,False,53.8,2,True,True
+FAC023,Demo Sahara Nayagarh Community Care Centre 23,Nayagarh,Odisha,20.052035,85.181592,Community Health Centre,3,True,66.2,7,True,True
+FAC024,Demo Seva Kendrapara Community Health Centre 24,Kendrapara,Odisha,20.419114,86.566769,Community Health Centre,3,True,66.2,7,True,True
+FAC025,Demo Sanjeevani Khordha District Care Hospital 25,Khordha,Odisha,20.223999,85.896271,District Hospital,4,True,70.4,12,True,True
+FAC026,Demo Pragati Cuttack Wellness Centre 26,Cuttack,Odisha,20.401060,85.962328,Health & Wellness Centre,1,False,48.4,2,True,True
+FAC027,Demo JanCare Puri Primary Care Centre 27,Puri,Odisha,19.924921,85.898465,Primary Health Centre,2,False,66.2,4,True,True
+FAC028,Demo Sanjeevani Dhenkanal District General Hospital 28,Dhenkanal,Odisha,20.749680,85.519948,District Hospital,4,True,59.0,12,True,True
+FAC029,Demo Navjeevan Nayagarh Tertiary Care Institute 29,Nayagarh,Odisha,20.045686,85.206690,Tertiary Hospital,5,True,74.6,18,True,True

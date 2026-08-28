@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAT_TEST_003",
+  "patient_flow": "NORMAL",
+  "doctor_reviewed": true,
+  "referral_required": true,
+  "criticality": "YELLOW",
+  "suspected_condition": "Fracture",
+  "patient_location": {
+    "village_id": "VIL151"
+  },
+  "arrival_datetime": "2026-08-26T18:00:00"
+}

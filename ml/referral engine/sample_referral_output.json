@@ -1,0 +1,98 @@
+{
+  "status": "pending_doctor_confirmation",
+  "patient_id": "PAT001",
+  "patient_flow": "NORMAL",
+  "criticality": "RED",
+  "suspected_condition": "Suspected heart attack",
+  "clinical_category": "cardiac",
+  "required_capability": "cardiology",
+  "patient_location": {
+    "source": "offline_village_lookup",
+    "village_id": "VIL001",
+    "village_name": "Arogya Sahi 001",
+    "block": "Cuttack Block 1",
+    "district": "Cuttack",
+    "state": "Odisha",
+    "latitude": 20.70616,
+    "longitude": 86.055257
+  },
+  "arrival_datetime": "2026-08-26T14:00:00",
+  "eligible_facility_count": 9,
+  "recommended_facility": {
+    "rank": 1,
+    "facility_id": "FAC020",
+    "facility_name": "Demo Navjeevan Cuttack District General Hospital 20",
+    "facility_type": "District Hospital",
+    "facility_level": 4,
+    "district": "Cuttack",
+    "distance_km": 16.31,
+    "required_capability": "cardiology",
+    "current_load_pct": 72.9,
+    "predicted_load_2h_pct": 75.0,
+    "available_referral_slots": 3,
+    "referral_score": 0.5049,
+    "forecast_source": "hist_gradient_boosting_model",
+    "why_ranked": [
+      "Provides required routing capability: cardiology",
+      "Facility is marked as emergency-receiving",
+      "Approximately 16.3 km from the patient location",
+      "Facility level 4 is suitable for RED routing",
+      "Current synthetic load: 72.9%",
+      "Predicted 2-hour synthetic load: 75.0%",
+      "Referral intake slots available: 3"
+    ]
+  },
+  "alternatives": [
+    {
+      "rank": 2,
+      "facility_id": "FAC016",
+      "facility_name": "Demo Sanjeevani Dhenkanal Regional Medical Centre 16",
+      "facility_type": "Tertiary Hospital",
+      "facility_level": 5,
+      "district": "Dhenkanal",
+      "distance_km": 36.34,
+      "required_capability": "cardiology",
+      "current_load_pct": 82.4,
+      "predicted_load_2h_pct": 78.5,
+      "available_referral_slots": 2,
+      "referral_score": 0.4203,
+      "forecast_source": "hist_gradient_boosting_model",
+      "why_ranked": [
+        "Provides required routing capability: cardiology",
+        "Facility is marked as emergency-receiving",
+        "Approximately 36.3 km from the patient location",
+        "Facility level 5 is suitable for RED routing",
+        "Current synthetic load: 82.4%",
+        "Predicted 2-hour synthetic load: 78.5%",
+        "Referral intake slots available: 2"
+      ]
+    },
+    {
+      "rank": 3,
+      "facility_id": "FAC028",
+      "facility_name": "Demo Sanjeevani Dhenkanal District General Hospital 28",
+      "facility_type": "District Hospital",
+      "facility_level": 4,
+      "district": "Dhenkanal",
+      "distance_km": 55.88,
+      "required_capability": "cardiology",
+      "current_load_pct": 65.7,
+      "predicted_load_2h_pct": 66.1,
+      "available_referral_slots": 4,
+      "referral_score": 0.4201,
+      "forecast_source": "hist_gradient_boosting_model",
+      "why_ranked": [
+        "Provides required routing capability: cardiology",
+        "Facility is marked as emergency-receiving",
+        "Approximately 55.9 km from the patient location",
+        "Facility level 4 is suitable for RED routing",
+        "Current synthetic load: 65.7%",
+        "Predicted 2-hour synthetic load: 66.1%",
+        "Referral intake slots available: 4"
+      ]
+    }
+  ],
+  "algorithm": "hard eligibility filters + criticality-aware weighted MCDA; Histogram Gradient Boosting for 2-hour load forecast",
+  "next_step": "doctor_confirms_referral",
+  "prototype_only": true
+}

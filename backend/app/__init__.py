@@ -1,0 +1,1 @@
+"""SIH Healthcare FastAPI backend."""

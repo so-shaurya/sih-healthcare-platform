@@ -1,0 +1,4 @@
+special_case_type,priority,route,uses_triage_ml,uses_normal_referral_engine
+life_threatening_fatal_disease,P1,specialized_priority_queue,False,False
+pregnant_woman,P2,direct_specialist_routing,False,False
+private_matter,P3,direct_specialist_routing,False,False

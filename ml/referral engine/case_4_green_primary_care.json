@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAT_TEST_004",
+  "patient_flow": "NORMAL",
+  "doctor_reviewed": true,
+  "referral_required": true,
+  "criticality": "GREEN",
+  "suspected_condition": "Routine primary-care referral",
+  "patient_location": {
+    "village_id": "VIL061"
+  },
+  "arrival_datetime": "2026-08-26T09:00:00"
+}

@@ -1,0 +1,101 @@
+{
+  "source": "Official CDC NHAMCS ED Stata files, 2018-2022",
+  "target": {
+    "source_variable": "IMMEDR",
+    "project_mapping": {
+      "1-2": "RED",
+      "3": "YELLOW",
+      "4-5": "GREEN"
+    },
+    "note": "Project mapping only; not an official CDC color triage system."
+  },
+  "split": {
+    "train": "2018-2020",
+    "validation": "2021",
+    "test_reserved": "2022"
+  },
+  "test_rows_reserved_and_not_predicted": 10207,
+  "numeric_features": [
+    "AGE",
+    "TEMPF",
+    "PULSE",
+    "RESPR",
+    "BPSYS",
+    "BPDIAS",
+    "POPCT",
+    "PAINSCALE",
+    "TOTCHRON",
+    "VITALS_MISSING_COUNT",
+    "RFV_COUNT",
+    "PULSE_PRESSURE",
+    "MAP_APPROX",
+    "SHOCK_INDEX",
+    "CHRONIC_POSITIVE_COUNT"
+  ],
+  "categorical_features": [
+    "SEX",
+    "ARREMS",
+    "AMBTRANSFER",
+    "SEEN72",
+    "EPISODE",
+    "RFV1",
+    "RFV2",
+    "RFV3",
+    "RFV4",
+    "RFV5",
+    "ASTHMA",
+    "CANCER",
+    "CEBVD",
+    "CHF",
+    "CKD",
+    "COPD",
+    "DEPRN",
+    "HYPLIPID",
+    "HTN",
+    "CAD",
+    "OBESITY",
+    "OSA",
+    "OSTPRSIS",
+    "SUBSTAB"
+  ],
+  "model": "HistGradientBoostingClassifier",
+  "best_hyperparameters": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 300,
+    "l2_regularization": 2.0,
+    "min_samples_leaf": 60
+  },
+  "red_weight_multiplier": 1.5,
+  "red_probability_threshold": 0.25,
+  "prototype_min_red_recall_target": 0.85,
+  "validation": {
+    "confusion_matrix": [
+      [
+        1601,
+        102,
+        177
+      ],
+      [
+        3229,
+        1140,
+        1060
+      ],
+      [
+        976,
+        326,
+        1884
+      ]
+    ],
+    "macro_f1": 0.4466289920416724,
+    "weighted_f1": 0.4245534616985875,
+    "balanced_accuracy": 0.5509720889513066,
+    "red_recall": 0.8515957446808511,
+    "red_precision": 0.27574922493971754,
+    "yellow_recall": 0.20998342236139253,
+    "green_recall": 0.591337099811676,
+    "red_to_yellow_count": 102,
+    "red_to_green_count": 177,
+    "severe_undertriage_rate": 0.09414893617021276
+  }
+}

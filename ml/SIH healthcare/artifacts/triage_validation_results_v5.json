@@ -1,0 +1,149 @@
+{
+  "source": "Official CDC NHAMCS ED Stata files, 2018-2022",
+  "target": {
+    "source_variable": "IMMEDR",
+    "project_mapping": {
+      "1-2": "RED",
+      "3": "YELLOW",
+      "4-5": "GREEN"
+    },
+    "note": "Project mapping only; not an official CDC color triage system."
+  },
+  "split": {
+    "train": "2018-2020",
+    "validation": "2021",
+    "test_reserved": "2022"
+  },
+  "test_rows_reserved_and_not_predicted": 10207,
+  "numeric_features": [
+    "AGE",
+    "TEMPF",
+    "PULSE",
+    "RESPR",
+    "BPSYS",
+    "BPDIAS",
+    "POPCT",
+    "PAINSCALE",
+    "TOTCHRON",
+    "VITALS_MISSING_COUNT",
+    "RFV_COUNT",
+    "BP_INCONSISTENT",
+    "PULSE_PRESSURE",
+    "MAP_APPROX",
+    "SHOCK_INDEX",
+    "CHRONIC_POSITIVE_COUNT",
+    "NEWS2_PARTIAL_SCORE",
+    "NEWS2_RED_PARAMETER_COUNT",
+    "NEWS2_COMPONENTS_MEASURED",
+    "NEWS2_RESPR_SCORE",
+    "NEWS2_POPCT_SCORE",
+    "NEWS2_BPSYS_SCORE",
+    "NEWS2_PULSE_SCORE",
+    "NEWS2_TEMPF_SCORE"
+  ],
+  "categorical_features": [
+    "SEX",
+    "ARREMS",
+    "AMBTRANSFER",
+    "SEEN72",
+    "EPISODE",
+    "RFV1",
+    "RFV2",
+    "RFV3",
+    "RFV4",
+    "RFV5",
+    "ASTHMA",
+    "CANCER",
+    "CEBVD",
+    "CHF",
+    "CKD",
+    "COPD",
+    "DEPRN",
+    "HYPLIPID",
+    "HTN",
+    "CAD",
+    "OBESITY",
+    "OSA",
+    "OSTPRSIS",
+    "SUBSTAB"
+  ],
+  "model": "HistGradientBoostingClassifier",
+  "best_hyperparameters": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 300,
+    "l2_regularization": 0.5,
+    "min_samples_leaf": 30
+  },
+  "red_weight_multiplier": 2.0,
+  "red_probability_threshold": 0.3,
+  "prototype_min_red_recall_target": 0.85,
+  "validation": {
+    "confusion_matrix": [
+      [
+        1606,
+        104,
+        170
+      ],
+      [
+        3257,
+        1136,
+        1036
+      ],
+      [
+        1010,
+        330,
+        1846
+      ]
+    ],
+    "macro_f1": 0.44358846962078463,
+    "weighted_f1": 0.42180771429800124,
+    "balanced_accuracy": 0.547637291988396,
+    "red_recall": 0.8542553191489362,
+    "red_precision": 0.27345479312106247,
+    "yellow_recall": 0.20924663842328237,
+    "green_recall": 0.5794099183929693,
+    "red_to_yellow_count": 104,
+    "red_to_green_count": 170,
+    "severe_undertriage_rate": 0.09042553191489362
+  },
+  "safety_guard": {
+    "layer_1_critical_vital_backstop": {
+      "POPCT": [
+        70.0,
+        null
+      ],
+      "PULSE": [
+        20.0,
+        220.0
+      ],
+      "BPSYS": [
+        50.0,
+        null
+      ],
+      "RESPR": [
+        4.0,
+        60.0
+      ],
+      "TEMPF": [
+        86.0,
+        107.0
+      ]
+    },
+    "layer_1_note": "Age-independent hard floor; forces RED regardless of age or missing data.",
+    "layer_2_scope": "adult age >= 16 only for NEWS2 logic",
+    "news2_partial_ge_7": "force project RED",
+    "news2_partial_ge_5_or_single_parameter_3": "block project GREEN; minimum YELLOW",
+    "bp_systolic_le_diastolic": "flag inconsistent; block GREEN and request re-measurement",
+    "note": "Project policy; NEWS2 is not itself a RED/YELLOW/GREEN ED triage system.",
+    "validation_overrides": {
+      "forced_red_critical_vital_backstop_count": 33,
+      "forced_red_news2_count": 0,
+      "green_blocked_to_yellow_count": 21,
+      "adult_news2_high_count": 121,
+      "adult_news2_urgent_count": 800,
+      "bp_inconsistent_count": 11,
+      "age_unknown_count": 0
+    }
+  }
+}

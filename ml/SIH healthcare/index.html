@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triage prototype — local demo</title>
+  <style>
+    body { max-width: 920px; margin: 2rem auto; padding: 0 1rem; font: 16px system-ui, sans-serif; color: #17212b; }
+    form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    label { display: grid; gap: 4px; font-size: .9rem; } input, select, button { padding: .55rem; font: inherit; }
+    fieldset { grid-column: 1 / -1; border: 1px solid #bdc7d3; display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; }
+    #result { margin-top: 1.25rem; padding: 1rem; background: #f2f5f8; white-space: pre-wrap; }
+    .notice { background: #fff4cf; padding: .8rem; }
+  </style>
+</head>
+<body>
+  <h1>ED triage prototype</h1>
+  <p class="notice">Local research/demo tool only. Do not use this prediction as a clinical triage decision.</p>
+  <p>Blank values are sent as missing. Enter temperature in °F (for example, 98.6), not CDC's raw implied-decimal form (986). RFV fields are optional NHAMCS reason-for-visit codes.</p>
+  <form id="triage-form">
+    <label>Age <input name="AGE" type="number" min="0" max="110" step="1"></label>
+    <label>Sex <select name="SEX"><option value=""></option><option value="1">1 — female</option><option value="2">2 — male</option></select></label>
+    <label>Temperature °F <input name="TEMPF" type="number" min="80" max="110" step="0.1"></label>
+    <label>Pulse (bpm) <input name="PULSE" type="number" min="0" max="250"></label>
+    <label>Respirations (breaths/min) <input name="RESPR" type="number" min="0" max="60"></label>
+    <label>Systolic BP <input name="BPSYS" type="number" min="0" max="300"></label>
+    <label>Diastolic BP <input name="BPDIAS" type="number" min="0" max="200"></label>
+    <label>O₂ saturation % <input name="POPCT" type="number" min="0" max="100"></label>
+    <label>Pain scale 0–10 <input name="PAINSCALE" type="number" min="0" max="10"></label>
+    <label>Chronic conditions count <input name="TOTCHRON" type="number" min="0" max="30"></label>
+    <label>Arrival EMS (1 yes / 2 no) <select name="ARREMS"><option value=""></option><option value="1">1 — yes</option><option value="2">2 — no</option></select></label>
+    <label>Ambulance transfer (1 yes / 2 no) <select name="AMBTRANSFER"><option value=""></option><option value="1">1 — yes</option><option value="2">2 — no</option></select></label>
+    <label>Seen in past 72h (1 yes / 2 no) <select name="SEEN72"><option value=""></option><option value="1">1 — yes</option><option value="2">2 — no</option></select></label>
+    <label>Episode (1 yes / 2 no) <select name="EPISODE"><option value=""></option><option value="1">1 — yes</option><option value="2">2 — no</option></select></label>
+    <fieldset><legend>NHAMCS reason-for-visit codes (optional)</legend>
+      <label>RFV1 <input name="RFV1" inputmode="numeric"></label><label>RFV2 <input name="RFV2" inputmode="numeric"></label><label>RFV3 <input name="RFV3" inputmode="numeric"></label><label>RFV4 <input name="RFV4" inputmode="numeric"></label><label>RFV5 <input name="RFV5" inputmode="numeric"></label>
+    </fieldset>
+    <fieldset><legend>Known conditions (0 no / 1 yes; optional)</legend>
+      <label>Asthma <select name="ASTHMA"><option value=""></option><option>0</option><option>1</option></select></label><label>Cancer <select name="CANCER"><option value=""></option><option>0</option><option>1</option></select></label><label>Cerebrovascular disease <select name="CEBVD"><option value=""></option><option>0</option><option>1</option></select></label><label>CHF <select name="CHF"><option value=""></option><option>0</option><option>1</option></select></label><label>CKD <select name="CKD"><option value=""></option><option>0</option><option>1</option></select></label><label>COPD <select name="COPD"><option value=""></option><option>0</option><option>1</option></select></label><label>Depression <select name="DEPRN"><option value=""></option><option>0</option><option>1</option></select></label><label>Hyperlipidemia <select name="HYPLIPID"><option value=""></option><option>0</option><option>1</option></select></label><label>Hypertension <select name="HTN"><option value=""></option><option>0</option><option>1</option></select></label><label>CAD <select name="CAD"><option value=""></option><option>0</option><option>1</option></select></label><label>Obesity <select name="OBESITY"><option value=""></option><option>0</option><option>1</option></select></label><label>Sleep apnea <select name="OSA"><option value=""></option><option>0</option><option>1</option></select></label><label>Osteoporosis <select name="OSTPRSIS"><option value=""></option><option>0</option><option>1</option></select></label><label>Substance abuse <select name="SUBSTAB"><option value=""></option><option>0</option><option>1</option></select></label>
+    </fieldset>
+    <button type="submit">Get prototype prediction</button>
+  </form>
+  <output id="result" aria-live="polite">Fill in the form, then submit.</output>
+  <script>
+    document.querySelector('#triage-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(event.currentTarget).entries());
+      for (const key of Object.keys(data)) if (data[key] === '') delete data[key];
+      const result = document.querySelector('#result'); result.textContent = 'Calculating…';
+      try {
+        const response = await fetch('/api/triage', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+        const body = await response.json();
+        result.textContent = response.ok ? `Final triage (safety pipeline): ${body.final_class}\nML class before safety guard: ${body.ml_class_before_safety_guard}\n\nRaw model scores\nStage-1 RED: ${(body.stage1_red_probability * 100).toFixed(1)}%\nStage-2 YELLOW: ${(body.stage2_yellow_probability * 100).toFixed(1)}%\nStage-2 GREEN: ${(body.stage2_green_probability * 100).toFixed(1)}%\n\nCustom demo-rule result: ${body.custom_demo_rule_class}\nRule reason: ${body.custom_demo_rule_reason}\n\nSafety guard changed result: ${body.safety_guard_changed_prediction ? 'Yes' : 'No'}\n\nSafety notes:\n${body.safety_reasons.length ? body.safety_reasons.join('\n') : 'No safety override was triggered.'}\n\n${body.warning}` : `Input error: ${body.error}`;
+      } catch (_) { result.textContent = 'Could not reach the local API. Start triage_api.py first.'; }
+    });
+  </script>
+</body>
+</html>
